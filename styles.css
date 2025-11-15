@@ -485,8 +485,23 @@ body {
 }
 
 .subnav-item-expandable {
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
+    padding-right: 36px;
+}
+
+/* Chevron wrapper - positioned absolutely to create centered hover area */
+.subnav-item-expandable::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
 }
 
 /* Chevron hover area - positioned absolutely over the chevron */
@@ -514,7 +529,10 @@ body {
     flex-shrink: 0;
     opacity: 0.5;
     transition: transform 0.2s ease, opacity 0.2s ease;
-    position: relative;
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 3;
 }
 
@@ -528,7 +546,7 @@ body {
 }
 
 .subnav-item-expandable.is-expanded .subnav-item-chevron {
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
 }
 
 /* Sub-navigation Sections */
