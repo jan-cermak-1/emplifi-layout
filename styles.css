@@ -387,8 +387,8 @@ body {
 /* Sub-navigation Actions */
 .subnav-actions {
     display: flex;
-    flex-direction: column;
-    gap: 0;
+    flex-direction: row;
+    gap: 6px;
     padding: 0 6px 12px 6px;
 }
 
@@ -412,9 +412,6 @@ body {
     letter-spacing: normal;
 }
 
-.subnav-action-btn:first-child {
-    margin-bottom: 12px;
-}
 
 .subnav-action-btn:hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -425,6 +422,11 @@ body {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
+}
+
+/* Blue plus icon for New button */
+.subnav-action-btn[data-action="new"] .subnav-action-icon {
+    filter: invert(26%) sepia(89%) saturate(4290%) hue-rotate(218deg) brightness(95%) contrast(104%);
 }
 
 .subnav-action-label {
