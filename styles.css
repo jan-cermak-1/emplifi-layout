@@ -100,7 +100,7 @@ body {
     flex-direction: column;
     gap: 12px;
     padding: 12px;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, transform 0.3s ease;
 }
 
 /* Navigation Logo */
@@ -863,7 +863,6 @@ body:not(.subnav-closed) .header-divider {
 
 body.mainnav-hidden .main-navigation {
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
 }
 
 body.mainnav-hidden .sub-navigation {
