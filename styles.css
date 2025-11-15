@@ -192,19 +192,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* Default state - gray icons */
-    filter: brightness(0) saturate(100%) invert(66%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(88%);
-    transition: filter 0.3s ease;
-}
-
-/* Hover state - white icons */
-.nav-item:hover .nav-icon img {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(105%) contrast(100%);
-}
-
-/* Selected state - white icons */
-.nav-item.is-selected .nav-icon img {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(105%) contrast(100%);
+    transition: opacity 0.2s ease;
 }
 
 .nav-label {

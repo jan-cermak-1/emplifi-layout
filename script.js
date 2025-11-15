@@ -33,9 +33,22 @@
          */
         init() {
             this.cacheElements();
+            this.initializeNavIcons();
             this.setupEventListeners();
             this.detectBreakpoint();
             console.log('Emplifi Layout initialized');
+        },
+        
+        /**
+         * Initialize navigation icons to default state
+         */
+        initializeNavIcons() {
+            if (this.elements.mainNav) {
+                const navItems = this.elements.mainNav.querySelectorAll('.nav-item');
+                navItems.forEach(item => {
+                    this.updateNavIcon(item, 'default');
+                });
+            }
         },
         
         /**
@@ -62,11 +75,21 @@
                     this.toggleMainNav(false);
                 });
                 
-                // Navigation items click handlers
+                // Navigation items click and hover handlers
                 const navItems = this.elements.mainNav.querySelectorAll('.nav-item');
                 navItems.forEach(item => {
+                    // Click handler
                     item.addEventListener('click', (e) => {
                         this.handleNavItemClick(e, item);
+                    });
+                    
+                    // Hover handlers for icon switching
+                    item.addEventListener('mouseenter', (e) => {
+                        this.handleNavItemHover(item, true);
+                    });
+                    
+                    item.addEventListener('mouseleave', (e) => {
+                        this.handleNavItemHover(item, false);
                     });
                 });
             }
@@ -107,15 +130,61 @@
         handleNavItemClick(event, item) {
             const section = item.getAttribute('data-section');
             
-            // Remove is-selected from all items
+            // Remove is-selected from all items and reset their icons
             const allItems = this.elements.mainNav.querySelectorAll('.nav-item');
-            allItems.forEach(i => i.classList.remove('is-selected'));
+            allItems.forEach(i => {
+                i.classList.remove('is-selected');
+                this.updateNavIcon(i, 'default');
+            });
             
-            // Add is-selected to clicked item
+            // Add is-selected to clicked item and update icon
             item.classList.add('is-selected');
+            this.updateNavIcon(item, 'selected');
             this.state.selectedSection = section;
             
             console.log(`Navigated to section: ${section}`);
+        },
+        
+        /**
+         * Handle navigation item hover
+         */
+        handleNavItemHover(item, isHovering) {
+            // Don't change icon if item is selected
+            if (item.classList.contains('is-selected')) {
+                return;
+            }
+            
+            if (isHovering) {
+                this.updateNavIcon(item, 'hover');
+            } else {
+                this.updateNavIcon(item, 'default');
+            }
+        },
+        
+        /**
+         * Update navigation item icon
+         */
+        updateNavIcon(item, state) {
+            const img = item.querySelector('.nav-icon img');
+            if (!img) return;
+            
+            let iconSrc;
+            switch(state) {
+                case 'hover':
+                    iconSrc = item.getAttribute('data-icon-hover');
+                    break;
+                case 'selected':
+                    iconSrc = item.getAttribute('data-icon-selected');
+                    break;
+                case 'default':
+                default:
+                    iconSrc = item.getAttribute('data-icon-default');
+                    break;
+            }
+            
+            if (iconSrc) {
+                img.src = iconSrc;
+            }
         },
         
         /**
