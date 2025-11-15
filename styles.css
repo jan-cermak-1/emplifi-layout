@@ -373,7 +373,8 @@ body {
     height: 60px;
     display: flex;
     align-items: center;
-    padding: 0 24px 0 18px;
+    justify-content: space-between;
+    padding: 0 12px 0 18px;
 }
 
 .subnav-title {
@@ -385,6 +386,32 @@ body {
     text-transform: uppercase;
     color: var(--color-on-layer-primary);
     margin: 0;
+}
+
+/* Collapse button */
+.subnav-collapse-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.subnav-collapse-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.subnav-collapse-icon {
+    width: 18px;
+    height: 18px;
 }
 
 /* Sub-navigation Actions */
