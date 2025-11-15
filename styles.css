@@ -738,12 +738,16 @@ body {
 
 /* Header Title */
 .header-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.011px;
     color: var(--color-on-layer-primary);
+    font-variant-numeric: slashed-zero;
+    font-feature-settings: 'ss04' on, 'cv05' on, 'cv08' on, 'liga' off, 'clig' off;
+    /* Headline/Headline 2 */
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.017px;
     margin: 0;
     padding-right: 6px;
 }
