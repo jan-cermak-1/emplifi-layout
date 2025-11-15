@@ -367,12 +367,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    transition: margin-left 0.3s ease;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
 }
 
 /* Closed state - slide out to the left */
 .sub-navigation.is-closed {
-    margin-left: calc(-1 * var(--sub-nav-width));
+    transform: translateX(-100%);
 }
 
 /* Sub-navigation Header */
