@@ -493,7 +493,11 @@ body {
     height: 18px;
     flex-shrink: 0;
     opacity: 0.5;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.subnav-item-expandable:hover .subnav-item-chevron {
+    opacity: 1;
 }
 
 .subnav-item-expandable.is-expanded .subnav-item-chevron {
@@ -505,12 +509,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding-top: 12px;
+    margin-top: 18px;
+    padding-top: 18px;
     border-top: 1px solid var(--color-border-primary);
+    margin-left: 6px;
+    margin-right: 6px;
 }
 
 .subnav-section-header {
-    padding: 12px 24px 12px 24px;
+    padding: 0 18px 12px 18px;
     margin-bottom: 0;
 }
 
@@ -521,8 +528,7 @@ body {
     line-height: 12px;
     letter-spacing: 0.01px;
     text-transform: uppercase;
-    color: var(--color-on-layer-primary);
-    opacity: 0.5;
+    color: rgb(8, 115, 156);
 }
 
 /* ========================================
