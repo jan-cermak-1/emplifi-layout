@@ -716,6 +716,36 @@ body {
     right: 0;
     border-bottom: 1px solid var(--color-border-header);
     z-index: 998;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+}
+
+/* Header toggle button for sub-navigation */
+.header-toggle-subnav {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--color-on-layer-secondary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header-toggle-subnav:hover {
+    background-color: #EDEDEE;
+    color: var(--color-on-layer-primary);
+}
+
+/* Hide toggle button when sub-navigation is open */
+.sub-navigation:not(.is-closed) ~ .header .header-toggle-subnav {
+    display: none;
 }
 
 /* ========================================

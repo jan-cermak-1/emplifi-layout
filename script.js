@@ -116,6 +116,16 @@
                 });
             }
             
+            // Header toggle button for sub-navigation
+            if (this.elements.header) {
+                const headerToggleBtn = this.elements.header.querySelector('.header-toggle-subnav');
+                if (headerToggleBtn) {
+                    headerToggleBtn.addEventListener('click', () => {
+                        this.toggleSubNav();
+                    });
+                }
+            }
+            
             // Window resize handler with debounce
             let resizeTimer;
             window.addEventListener('resize', () => {
