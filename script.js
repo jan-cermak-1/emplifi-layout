@@ -94,8 +94,16 @@
                 });
             }
             
-            // Sub-navigation expandable items - chevron hover effect
+            // Sub-navigation collapse button
             if (this.elements.subNav) {
+                const collapseBtn = this.elements.subNav.querySelector('.subnav-collapse-btn');
+                if (collapseBtn) {
+                    collapseBtn.addEventListener('click', () => {
+                        this.toggleSubNav();
+                    });
+                }
+                
+                // Sub-navigation expandable items - chevron hover effect
                 const expandableItems = this.elements.subNav.querySelectorAll('.subnav-item-expandable');
                 expandableItems.forEach(item => {
                     item.addEventListener('mousemove', (e) => {
@@ -246,7 +254,11 @@
             this.state.subNavVisible = !this.state.subNavVisible;
             
             if (this.elements.subNav) {
-                this.elements.subNav.classList.toggle('hidden', !this.state.subNavVisible);
+                if (this.state.subNavVisible) {
+                    this.elements.subNav.classList.remove('is-closed');
+                } else {
+                    this.elements.subNav.classList.add('is-closed');
+                }
                 document.documentElement.setAttribute('data-subnav-visible', this.state.subNavVisible);
             }
         },
