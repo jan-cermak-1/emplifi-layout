@@ -367,7 +367,7 @@ body {
     flex-direction: column;
     gap: 0;
     transform: translateX(0);
-    transition: transform 0.3s ease;
+    transition: left 0.3s ease, transform 0.3s ease;
 }
 
 /* Closed state - slide out to the left */
@@ -867,17 +867,14 @@ body.mainnav-hidden .main-navigation {
 
 body.mainnav-hidden .sub-navigation {
     left: 0;
-    transition: left 0.3s ease, transform 0.3s ease;
 }
 
 body.mainnav-hidden .header {
     left: var(--sub-nav-width);
-    transition: left 0.3s ease;
 }
 
 body.mainnav-hidden .content {
     margin-left: var(--sub-nav-width);
-    transition: margin-left 0.3s ease;
 }
 
 /* When both main nav is hidden AND sub nav is closed */
