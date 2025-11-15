@@ -730,10 +730,8 @@ body {
 /* Header Divider */
 .header-divider {
     width: 1px;
-    height: 24px;
     align-self: stretch;
     background: var(--color-border-primary);
-    border: 1px solid var(--color-border-primary);
     margin-right: 6px;
     flex-shrink: 0;
 }
