@@ -135,6 +135,15 @@
                 }
             }
             
+            // Logo reload handler
+            const logoReload = document.getElementById('nav-logo-reload');
+            if (logoReload) {
+                logoReload.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.reload();
+                });
+            }
+            
             // Window resize handler with debounce
             let resizeTimer;
             window.addEventListener('resize', () => {
