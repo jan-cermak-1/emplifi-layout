@@ -699,7 +699,7 @@ body {
     height: 36px;
     min-width: 36px;
     max-height: 36px;
-    padding: 9px;
+    padding: 0;
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -717,6 +717,7 @@ body {
     width: 18px;
     height: 18px;
     display: block;
+    flex-shrink: 0;
 }
 
 /* Search button with border */
