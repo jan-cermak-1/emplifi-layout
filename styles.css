@@ -781,14 +781,15 @@ body:not(.subnav-closed) .header-divider {
         padding: 0 36px;
     }
     
-    /* On big screens with sub-nav closed, show menu button but hide search */
-    body.subnav-closed .header-toggle-subnav {
-        display: flex;
+    /* On big screens, always hide search button and divider (search is in submenu) */
+    .header-search-btn,
+    .header-divider {
+        display: none;
     }
     
-    body.subnav-closed .header-search-btn,
-    body.subnav-closed .header-divider {
-        display: none;
+    /* On big screens with sub-nav closed, show menu button */
+    body.subnav-closed .header-toggle-subnav {
+        display: flex;
     }
 }
 
