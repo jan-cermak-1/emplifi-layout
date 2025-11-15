@@ -94,6 +94,20 @@
                 });
             }
             
+            // Sub-navigation expandable items - chevron hover effect
+            if (this.elements.subNav) {
+                const expandableItems = this.elements.subNav.querySelectorAll('.subnav-item-expandable');
+                expandableItems.forEach(item => {
+                    item.addEventListener('mousemove', (e) => {
+                        this.handleChevronHover(e, item);
+                    });
+                    
+                    item.addEventListener('mouseleave', (e) => {
+                        item.classList.remove('chevron-hover');
+                    });
+                });
+            }
+            
             // Window resize handler with debounce
             let resizeTimer;
             window.addEventListener('resize', () => {
@@ -184,6 +198,22 @@
             
             if (iconSrc) {
                 img.src = iconSrc;
+            }
+        },
+        
+        /**
+         * Handle chevron hover effect for expandable sub-nav items
+         */
+        handleChevronHover(event, item) {
+            const rect = item.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const width = rect.width;
+            
+            // Check if mouse is in the right 36px area (chevron zone)
+            if (x > width - 36) {
+                item.classList.add('chevron-hover');
+            } else {
+                item.classList.remove('chevron-hover');
             }
         },
         

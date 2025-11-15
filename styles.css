@@ -485,29 +485,26 @@ body {
 }
 
 .subnav-item-expandable {
-    justify-content: flex-start;
+    justify-content: space-between;
     position: relative;
-    padding-right: 48px;
 }
 
-.subnav-item-chevron-btn {
+/* Chevron hover area - positioned absolutely over the chevron */
+.subnav-item-expandable::before {
+    content: '';
     position: absolute;
     right: 0;
     top: 0;
     width: 36px;
     height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
     border-radius: 6px;
-    cursor: pointer;
+    background-color: transparent;
     transition: background-color 0.2s ease;
-    padding: 0;
+    pointer-events: auto;
+    z-index: 2;
 }
 
-.subnav-item-chevron-btn:hover {
+.subnav-item-expandable::before:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -517,10 +514,17 @@ body {
     flex-shrink: 0;
     opacity: 0.5;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .subnav-item-expandable:hover .subnav-item-chevron {
     opacity: 1;
+}
+
+/* Add special hover highlight when hovering specifically over chevron area */
+.subnav-item-expandable.chevron-hover::before {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .subnav-item-expandable.is-expanded .subnav-item-chevron {
@@ -551,11 +555,6 @@ body {
     line-height: 12px;
     letter-spacing: 0.01px;
     text-transform: uppercase;
-    color: rgb(8, 115, 156);
-}
-
-/* Early Access section title - blue */
-.subnav-section:first-of-type .subnav-section-title {
     color: rgb(8, 115, 156);
 }
 
