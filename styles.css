@@ -417,6 +417,7 @@ body {
 .subnav-action-btn[data-action="search"] {
     flex: 1 1 auto;
     min-width: 36px;
+    justify-content: center;
 }
 
 
