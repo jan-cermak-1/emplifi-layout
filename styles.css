@@ -730,10 +730,11 @@ body {
 /* Header Divider */
 .header-divider {
     width: 1px;
-    align-self: stretch;
+    height: 24px;
     background: var(--color-border-primary);
     margin-right: 6px;
     flex-shrink: 0;
+    align-self: center;
 }
 
 /* Header Title */
