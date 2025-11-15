@@ -362,6 +362,111 @@ body {
     border-right: 1px solid var(--color-border-primary);
     z-index: 999;
     overflow-y: auto;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Sub-navigation Header */
+.subnav-header {
+    padding: 0 12px;
+}
+
+.subnav-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0.01px;
+    text-transform: uppercase;
+    color: var(--color-on-layer-primary);
+    margin: 0;
+}
+
+/* Sub-navigation Actions */
+.subnav-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.subnav-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 36px;
+    padding: 0 15px 0 12px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.subnav-action-btn:first-child {
+    margin-bottom: 12px;
+}
+
+.subnav-action-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.subnav-action-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.subnav-action-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--color-on-layer-primary);
+}
+
+/* Sub-navigation Items */
+.subnav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.subnav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 36px;
+    padding: 0 12px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.subnav-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.subnav-item.is-active {
+    background-color: var(--color-layer-level-0);
+}
+
+.subnav-item-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.subnav-item-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    color: var(--color-on-layer-primary);
 }
 
 /* ========================================
