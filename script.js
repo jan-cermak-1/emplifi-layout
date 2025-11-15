@@ -22,8 +22,10 @@
         
         // State
         state: {
+            mainNavOpen: false,
             subNavVisible: true,
-            currentBreakpoint: null
+            currentBreakpoint: null,
+            selectedSection: null
         },
         
         /**
@@ -50,6 +52,25 @@
          * Setup event listeners
          */
         setupEventListeners() {
+            // Main navigation toggle on hover/click
+            if (this.elements.mainNav) {
+                this.elements.mainNav.addEventListener('mouseenter', () => {
+                    this.toggleMainNav(true);
+                });
+                
+                this.elements.mainNav.addEventListener('mouseleave', () => {
+                    this.toggleMainNav(false);
+                });
+                
+                // Navigation items click handlers
+                const navItems = this.elements.mainNav.querySelectorAll('.nav-item');
+                navItems.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        this.handleNavItemClick(e, item);
+                    });
+                });
+            }
+            
             // Window resize handler with debounce
             let resizeTimer;
             window.addEventListener('resize', () => {
@@ -63,6 +84,38 @@
             document.addEventListener('keydown', (e) => {
                 this.handleKeyboardShortcuts(e);
             });
+        },
+        
+        /**
+         * Toggle main navigation open/closed
+         */
+        toggleMainNav(open) {
+            this.state.mainNavOpen = open;
+            
+            if (this.elements.mainNav) {
+                if (open) {
+                    this.elements.mainNav.classList.add('is-open');
+                } else {
+                    this.elements.mainNav.classList.remove('is-open');
+                }
+            }
+        },
+        
+        /**
+         * Handle navigation item click
+         */
+        handleNavItemClick(event, item) {
+            const section = item.getAttribute('data-section');
+            
+            // Remove is-selected from all items
+            const allItems = this.elements.mainNav.querySelectorAll('.nav-item');
+            allItems.forEach(i => i.classList.remove('is-selected'));
+            
+            // Add is-selected to clicked item
+            item.classList.add('is-selected');
+            this.state.selectedSection = section;
+            
+            console.log(`Navigated to section: ${section}`);
         },
         
         /**
