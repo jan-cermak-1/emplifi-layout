@@ -669,17 +669,43 @@ body {
     top: 0;
     left: var(--total-nav-width);
     right: 0;
-    border-bottom: 1px solid var(--color-border-header);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     z-index: 998;
     display: flex;
     align-items: center;
-    padding: 0 24px;
+    justify-content: space-between;
+    padding: 0 36px;
     transition: left 0.3s ease;
 }
 
 /* When sub-navigation is closed, adjust header position */
 .subnav-closed .header {
     left: var(--main-nav-width);
+}
+
+/* Header Left */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Header Title */
+.header-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.017px;
+    color: var(--color-on-layer-primary);
+    margin: 0;
+}
+
+/* Header Right */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 /* Header toggle button for sub-navigation */
