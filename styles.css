@@ -687,53 +687,105 @@ body {
 .header-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
+    height: 48px;
+}
+
+/* Header Buttons - Base Style */
+.header-btn {
+    background-color: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    max-height: 36px;
+    padding: 9px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+.header-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-btn img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* Search button with border */
+.header-search-btn {
+    background-color: transparent;
+    border: 1px solid var(--color-border-primary);
+}
+
+/* Header Divider */
+.header-divider {
+    width: 1px;
+    height: 24px;
+    background-color: var(--color-border-primary);
+    border: 1px solid var(--color-border-primary);
+    margin-right: 6px;
+    flex-shrink: 0;
 }
 
 /* Header Title */
 .header-title {
     font-family: 'Inter', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 30px;
-    letter-spacing: -0.017px;
+    line-height: 24px;
+    letter-spacing: -0.011px;
     color: var(--color-on-layer-primary);
     margin: 0;
+    padding-right: 6px;
 }
 
 /* Header Right */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
 }
 
-/* Header toggle button for sub-navigation */
-.header-toggle-subnav {
-    width: 36px;
-    height: 36px;
+/* Responsive behavior: Hide/show elements based on sub-nav state and screen size */
+/* When sub-nav is open, hide menu and search buttons */
+.header-toggle-subnav,
+.header-search-btn,
+.header-divider {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    color: var(--color-on-layer-secondary);
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.header-toggle-subnav:hover {
-    background-color: #EDEDEE;
-    color: var(--color-on-layer-primary);
-}
-
-/* Hide toggle button when sub-navigation is open */
-.sub-navigation:not(.is-closed) ~ .header .header-toggle-subnav {
+/* When sub-navigation is open (menu closed), hide menu button, search, and divider */
+body:not(.subnav-closed) .header-toggle-subnav,
+body:not(.subnav-closed) .header-search-btn,
+body:not(.subnav-closed) .header-divider {
     display: none;
 }
+
+/* Big screen behavior (>= 1560px) */
+@media (min-width: 1560px) {
+    .header {
+        padding: 0 36px;
+    }
+    
+    /* On big screens with sub-nav closed, show menu button but hide search */
+    body.subnav-closed .header-toggle-subnav {
+        display: flex;
+    }
+    
+    body.subnav-closed .header-search-btn,
+    body.subnav-closed .header-divider {
+        display: none;
+    }
+}
+
 
 /* ========================================
    Content Area
