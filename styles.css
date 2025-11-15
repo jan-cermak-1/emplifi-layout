@@ -467,6 +467,47 @@ body {
     font-weight: 700;
     line-height: 18px;
     color: var(--color-on-layer-primary);
+    flex: 1;
+}
+
+.subnav-item-expandable {
+    justify-content: space-between;
+}
+
+.subnav-item-chevron {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--color-on-layer-primary);
+    opacity: 0.5;
+    transition: transform 0.2s ease;
+}
+
+.subnav-item-expandable.is-expanded .subnav-item-chevron {
+    transform: rotate(180deg);
+}
+
+/* Sub-navigation Sections */
+.subnav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.subnav-section-header {
+    padding: 0 12px;
+    margin-bottom: 12px;
+}
+
+.subnav-section-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0.01px;
+    text-transform: uppercase;
+    color: var(--color-on-layer-primary);
+    opacity: 0.5;
 }
 
 /* ========================================
