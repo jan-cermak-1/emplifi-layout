@@ -398,20 +398,25 @@ body {
     padding: 0;
     margin: 0;
     background-color: transparent;
-    border: 1px solid transparent;
+    border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .subnav-collapse-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.1);
+    background-color: #EDEDEE;
+}
+
+/* Blue icon on hover */
+.subnav-collapse-btn:hover .subnav-collapse-icon {
+    filter: invert(26%) sepia(89%) saturate(4290%) hue-rotate(218deg) brightness(95%) contrast(104%);
 }
 
 .subnav-collapse-icon {
     width: 18px;
     height: 18px;
+    transition: filter 0.2s ease;
 }
 
 /* Sub-navigation Actions */
