@@ -10,6 +10,7 @@
 :root {
     /* Colors - Soul Design System */
     --color-on-layer-primary: #111114;
+    --color-on-layer-tertiary: #9d9da0;
     --color-layer-level-1: #ffffff;
     --color-layer-level-0: #f3f3f5;
     --color-border-primary: rgba(0, 0, 0, 0.2);
@@ -212,12 +213,15 @@ body {
 
 .nav-label {
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
     font-size: 10px;
-    line-height: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12px; /* 120% */
     letter-spacing: 0.01px;
     text-transform: uppercase;
-    color: #9d9da0;
+    color: var(--color-on-layer-tertiary);
+    font-variant-numeric: slashed-zero;
+    font-feature-settings: 'ss04' on, 'cv05' on, 'cv08' on, 'liga' off, 'clig' off;
     white-space: nowrap;
     opacity: 0;
     transition: opacity 0.3s ease;
