@@ -482,7 +482,6 @@ body {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
-    color: var(--color-on-layer-primary);
     opacity: 0.5;
     transition: transform 0.2s ease;
 }
