@@ -731,7 +731,8 @@ body {
 .header-divider {
     width: 1px;
     height: 24px;
-    background-color: var(--color-border-primary);
+    align-self: stretch;
+    background: var(--color-border-primary);
     border: 1px solid var(--color-border-primary);
     margin-right: 6px;
     flex-shrink: 0;
