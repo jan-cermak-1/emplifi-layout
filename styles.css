@@ -370,7 +370,7 @@ body {
 
 /* Sub-navigation Header */
 .subnav-header {
-    padding: 36px;
+    padding: 24px 24px 0 24px;
 }
 
 .subnav-title {
@@ -381,7 +381,7 @@ body {
     letter-spacing: 0.01px;
     text-transform: uppercase;
     color: var(--color-on-layer-primary);
-    margin: 0 0 18px 0;
+    margin: 0 0 24px 0;
 }
 
 /* Sub-navigation Actions */
