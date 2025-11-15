@@ -103,25 +103,41 @@ body {
     height: 36px;
     display: flex;
     align-items: center;
-    justify-content: center;
     background: rgba(255, 255, 255, 0);
     border-radius: 6px;
     transition: var(--transition-standard);
+    overflow: hidden;
 }
 
 .nav-logo-link {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 14.5px;
     width: 100%;
     height: 100%;
     text-decoration: none;
+    padding-left: 6px;
 }
 
-.nav-logo-img {
+.nav-logo-icon {
     width: 24.89px;
     height: 24.89px;
+    flex-shrink: 0;
     object-fit: contain;
+}
+
+.nav-logo-text {
+    height: 20.75px;
+    width: 69.12px;
+    flex-shrink: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show logo text when navigation is open */
+.main-navigation.is-open .nav-logo-text {
+    opacity: 1;
 }
 
 /* Navigation Divider */
