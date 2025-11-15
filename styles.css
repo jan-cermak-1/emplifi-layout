@@ -719,6 +719,12 @@ body {
     display: flex;
     align-items: center;
     padding: 0 24px;
+    transition: left 0.3s ease;
+}
+
+/* When sub-navigation is closed, adjust header position */
+.subnav-closed .header {
+    left: var(--main-nav-width);
 }
 
 /* Header toggle button for sub-navigation */
@@ -764,6 +770,12 @@ body {
     padding: var(--content-padding);
     overflow-y: auto;
     overflow-x: auto;
+    transition: margin-left 0.3s ease;
+}
+
+/* When sub-navigation is closed, adjust content margin */
+.subnav-closed .content {
+    margin-left: var(--main-nav-width);
 }
 
 /* ========================================

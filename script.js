@@ -266,8 +266,10 @@
             if (this.elements.subNav) {
                 if (this.state.subNavVisible) {
                     this.elements.subNav.classList.remove('is-closed');
+                    document.body.classList.remove('subnav-closed');
                 } else {
                     this.elements.subNav.classList.add('is-closed');
+                    document.body.classList.add('subnav-closed');
                 }
                 document.documentElement.setAttribute('data-subnav-visible', this.state.subNavVisible);
             }
