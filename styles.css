@@ -856,3 +856,40 @@ body:not(.subnav-closed) .header-divider {
 .content::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* ========================================
+   Fullscreen Mode - Hide Main Navigation
+   ======================================== */
+
+body.mainnav-hidden .main-navigation {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+body.mainnav-hidden .sub-navigation {
+    left: 0;
+    transition: left 0.3s ease, transform 0.3s ease;
+}
+
+body.mainnav-hidden .header {
+    left: var(--sub-nav-width);
+    transition: left 0.3s ease;
+}
+
+body.mainnav-hidden .content {
+    margin-left: var(--sub-nav-width);
+    transition: margin-left 0.3s ease;
+}
+
+/* When both main nav is hidden AND sub nav is closed */
+body.mainnav-hidden.subnav-closed .sub-navigation {
+    transform: translateX(calc(-100%));
+}
+
+body.mainnav-hidden.subnav-closed .header {
+    left: 0;
+}
+
+body.mainnav-hidden.subnav-closed .content {
+    margin-left: 0;
+}

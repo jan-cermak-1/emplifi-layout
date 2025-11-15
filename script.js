@@ -24,6 +24,7 @@
         state: {
             mainNavOpen: false,
             subNavVisible: true,
+            mainNavVisible: true,
             currentBreakpoint: null,
             selectedSection: null
         },
@@ -122,6 +123,14 @@
                 if (headerToggleBtn) {
                     headerToggleBtn.addEventListener('click', () => {
                         this.toggleSubNav();
+                    });
+                }
+                
+                // Fullscreen button to hide/show main navigation
+                const fullscreenBtn = this.elements.header.querySelector('.header-fullscreen-btn');
+                if (fullscreenBtn) {
+                    fullscreenBtn.addEventListener('click', () => {
+                        this.toggleFullscreen();
                     });
                 }
             }
@@ -273,6 +282,34 @@
                 }
                 document.documentElement.setAttribute('data-subnav-visible', this.state.subNavVisible);
             }
+        },
+        
+        /**
+         * Toggle fullscreen mode (hide/show main navigation)
+         */
+        toggleFullscreen() {
+            this.state.mainNavVisible = !this.state.mainNavVisible;
+            
+            const fullscreenBtn = this.elements.header.querySelector('.header-fullscreen-btn');
+            const fullscreenIcon = fullscreenBtn ? fullscreenBtn.querySelector('img') : null;
+            
+            if (this.state.mainNavVisible) {
+                // Show main navigation
+                document.body.classList.remove('mainnav-hidden');
+                if (fullscreenIcon) {
+                    fullscreenIcon.src = 'assets/header-UNA/Maximize, Fullscreen.svg';
+                    fullscreenBtn.setAttribute('aria-label', 'Fullscreen');
+                }
+            } else {
+                // Hide main navigation (fullscreen mode)
+                document.body.classList.add('mainnav-hidden');
+                if (fullscreenIcon) {
+                    fullscreenIcon.src = 'assets/header-UNA/Minimize- fulsscreen.svg';
+                    fullscreenBtn.setAttribute('aria-label', 'Exit fullscreen');
+                }
+            }
+            
+            document.documentElement.setAttribute('data-mainnav-visible', this.state.mainNavVisible);
         },
         
         /**
