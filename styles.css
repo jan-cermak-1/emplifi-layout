@@ -485,7 +485,30 @@ body {
 }
 
 .subnav-item-expandable {
-    justify-content: space-between;
+    justify-content: flex-start;
+    position: relative;
+    padding-right: 48px;
+}
+
+.subnav-item-chevron-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 0;
+}
+
+.subnav-item-chevron-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .subnav-item-chevron {
@@ -529,6 +552,16 @@ body {
     letter-spacing: 0.01px;
     text-transform: uppercase;
     color: rgb(8, 115, 156);
+}
+
+/* Early Access section title - blue */
+.subnav-section:first-of-type .subnav-section-title {
+    color: rgb(8, 115, 156);
+}
+
+/* Discover and other sections - gray */
+.subnav-section:not(:first-of-type) .subnav-section-title {
+    color: rgb(80, 80, 87);
 }
 
 /* ========================================
