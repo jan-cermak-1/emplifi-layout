@@ -86,7 +86,7 @@ export const sectionsConfig = {
         name: 'Publisher',
         url: 'publisher.html',
         pageTitle: 'Publisher - Emplifi',
-        status: 'placeholder',
+        status: 'complete',
         icons: {
             normal: 'assets/main-navigation/icons/normal/Publisher.svg',
             hover: 'assets/main-navigation/icons/hover/Publisher.svg',

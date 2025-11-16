@@ -698,6 +698,134 @@ sub-navigation.is-closed,
 }
 
 /* ========================================
+   Publisher Sub-Navigation Specific Styles
+   ======================================== */
+
+/* Primary action button (blue Create button) */
+.subnav-action-btn--primary {
+    background: #0c4bff;
+    border-color: #0c4bff;
+    color: #ffffff;
+    font-weight: 700;
+    justify-content: center;
+    width: 100%;
+}
+
+.subnav-action-btn--primary:hover {
+    background: #0a3fd9;
+    border-color: #0a3fd9;
+}
+
+.subnav-action-btn--primary .subnav-action-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* NEW badge (green) */
+.subnav-badge-new {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 6px;
+    background: #148134;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0.01px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-left: 6px;
+}
+
+/* Sub-items container (for nested items like Feeds) */
+.subnav-subitems {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin-left: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.subnav-subitems.is-hidden {
+    max-height: 0;
+    display: none;
+}
+
+/* Individual sub-item */
+.subnav-subitem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    min-height: 36px;
+    padding: 9px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: left;
+}
+
+.subnav-subitem:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.subnav-subitem-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.subnav-subitem-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.subnav-subitem-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #2f3744;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Counter badge on the right */
+.subnav-counter {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0.01px;
+    text-transform: uppercase;
+    color: #717578;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.subnav-counter--danger {
+    color: #da2828;
+}
+
+.subnav-counter--hidden {
+    opacity: 0;
+}
+
+/* Expandable item with open state */
+.subnav-item-expandable.is-open .subnav-item-chevron {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* ========================================
    Header
    60px high, fixed top, with bottom border
    ======================================== */

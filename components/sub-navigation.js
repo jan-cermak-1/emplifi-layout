@@ -32,6 +32,8 @@ class SubNavigation extends HTMLElement {
     render(section) {
         if (section.id === 'unified-analytics') {
             this.renderUnifiedAnalytics(section);
+        } else if (section.id === 'publisher') {
+            this.renderPublisher(section, 'calendar'); // default to calendar view
         } else {
             this.renderPlaceholder(section);
         }
@@ -178,6 +180,136 @@ class SubNavigation extends HTMLElement {
     }
 
     /**
+     * Renders the Publisher sub-navigation
+     */
+    renderPublisher(section, pageState = 'calendar') {
+        this.innerHTML = `
+            <!-- Section Title -->
+            <div class="subnav-header">
+                <h1 class="subnav-title">${section.name}</h1>
+                <button class="subnav-collapse-btn" aria-label="Close sub-navigation">
+                    <img src="assets/publisher/sub-navigation/Menu close.svg" alt="" class="subnav-collapse-icon" />
+                </button>
+            </div>
+            
+            <!-- Scrollable Content -->
+            <div class="subnav-content">
+                <!-- Create Action Button -->
+                <div class="subnav-actions">
+                    <button class="subnav-action-btn subnav-action-btn--primary" data-action="create">
+                        <img src="assets/publisher/sub-navigation/Plus.svg" alt="Create" class="subnav-action-icon" />
+                        <span class="subnav-action-label">Create</span>
+                    </button>
+                </div>
+                
+                <!-- Main Navigation Items -->
+                <div class="subnav-section subnav-section--main">
+                    <nav class="subnav-items">
+                        <button class="subnav-item ${pageState === 'calendar' ? 'is-active' : ''}" data-page="calendar">
+                            <img src="assets/publisher/sub-navigation/Calendar, Datepicker.svg" alt="Calendar" class="subnav-item-icon" />
+                            <span class="subnav-item-label">Calendar</span>
+                        </button>
+                        <button class="subnav-item ${pageState === 'campaigns' ? 'is-active' : ''}" data-page="campaigns">
+                            <img src="assets/publisher/sub-navigation/Campaign.svg" alt="Campaigns" class="subnav-item-icon" />
+                            <span class="subnav-item-label">Campaigns</span>
+                            <span class="subnav-badge-new">NEW</span>
+                        </button>
+                        <button class="subnav-item" data-page="collections">
+                            <img src="assets/publisher/sub-navigation/Collection.svg" alt="Collections" class="subnav-item-icon" />
+                            <span class="subnav-item-label">Collections</span>
+                        </button>
+                        <button class="subnav-item" data-page="link-bio">
+                            <img src="assets/publisher/sub-navigation/Link in Bio.svg" alt="Link in Bio" class="subnav-item-icon" />
+                            <span class="subnav-item-label">Link in Bio</span>
+                        </button>
+                        <button class="subnav-item" data-page="instagram-grid">
+                            <img src="assets/publisher/sub-navigation/Overview.svg" alt="Instagram grid" class="subnav-item-icon" />
+                            <span class="subnav-item-label">Instagram grid</span>
+                        </button>
+                    </nav>
+                </div>
+                
+                <!-- Feeds (expandable) -->
+                <div class="subnav-section">
+                    <nav class="subnav-items">
+                        <button class="subnav-item subnav-item-expandable" data-toggle="feeds">
+                            <span class="subnav-item-label">Feeds</span>
+                            <img src="assets/publisher/sub-navigation/Chevron down.svg" alt="" class="subnav-item-chevron" />
+                        </button>
+                        
+                        <!-- Feeds sub-items (hidden by default) -->
+                        <div class="subnav-subitems is-hidden" data-section="feeds">
+                            <button class="subnav-subitem" data-page="scheduled">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Schedule.svg" alt="Scheduled" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Scheduled</span>
+                                </div>
+                                <span class="subnav-counter">45</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="drafts">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Draft.svg" alt="Drafts" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Drafts</span>
+                                </div>
+                                <span class="subnav-counter">385</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="assigned">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Assigned.svg" alt="Assigned to you" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Assigned to you</span>
+                                </div>
+                                <span class="subnav-counter">3</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="publishing-error">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Error, Exclamation.svg" alt="Publishing error" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Publishing error</span>
+                                </div>
+                                <span class="subnav-counter subnav-counter--danger">5</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="waiting-approval">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Checkmark.svg" alt="Waiting for approval" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Waiting for approval</span>
+                                </div>
+                                <span class="subnav-counter">15</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="rejected">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Close.svg" alt="Rejected" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Rejected</span>
+                                </div>
+                                <span class="subnav-counter subnav-counter--hidden">0</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="sent">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Send, Publish.svg" alt="Sent" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Sent</span>
+                                </div>
+                                <span class="subnav-counter subnav-counter--hidden">578</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="dark-posts">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Night, Dark.svg" alt="Dark posts" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Dark posts</span>
+                                </div>
+                                <span class="subnav-counter subnav-counter--hidden">0</span>
+                            </button>
+                            <button class="subnav-subitem" data-page="preset-templates">
+                                <div class="subnav-subitem-content">
+                                    <img src="assets/publisher/sub-navigation/Post.svg" alt="Preset templates" class="subnav-subitem-icon" />
+                                    <span class="subnav-subitem-label">Preset templates</span>
+                                </div>
+                                <span class="subnav-counter subnav-counter--hidden">0</span>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        `;
+    }
+
+    /**
      * Renders a placeholder sub-navigation for sections without full implementation
      */
     renderPlaceholder(section) {
@@ -229,6 +361,25 @@ class SubNavigation extends HTMLElement {
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
                 this.toggleClosed();
+            });
+        }
+
+        // Feeds toggle button (Publisher specific)
+        const feedsToggle = this.querySelector('[data-toggle="feeds"]');
+        if (feedsToggle) {
+            feedsToggle.addEventListener('click', () => {
+                const feedsSubitems = this.querySelector('[data-section="feeds"]');
+                if (feedsSubitems) {
+                    const isHidden = feedsSubitems.classList.contains('is-hidden');
+                    
+                    if (isHidden) {
+                        feedsSubitems.classList.remove('is-hidden');
+                        feedsToggle.classList.add('is-open');
+                    } else {
+                        feedsSubitems.classList.add('is-hidden');
+                        feedsToggle.classList.remove('is-open');
+                    }
+                }
             });
         }
     }
