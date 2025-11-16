@@ -115,7 +115,7 @@ main-navigation,
 /* Main navigation open state on hover */
 main-navigation.is-open,
 .main-navigation.is-open {
-    width: 240px;
+    width: 240px !important;
 }
 
 /* Navigation Logo */

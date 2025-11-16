@@ -156,7 +156,6 @@ class MainNavigation extends HTMLElement {
         this._hoverLeaveHandler = () => {
             this.classList.remove('is-open');
         };
-        
         this.addEventListener('mouseenter', this._hoverEnterHandler);
         this.addEventListener('mouseleave', this._hoverLeaveHandler);
     }
