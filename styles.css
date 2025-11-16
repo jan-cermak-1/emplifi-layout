@@ -512,7 +512,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 0 6px;
+    padding: 0; /* No padding on container */
 }
 
 .subnav-item {
@@ -521,7 +521,7 @@ body {
     justify-content: flex-start;
     gap: 6px;
     height: 36px;
-    padding: 0 6px; /* Default padding for top-level items (Home, Objectives) */
+    padding: 0 12px; /* 12px left and right - matches production */
     background: transparent;
     border: none;
     border-radius: 6px;
@@ -532,14 +532,9 @@ body {
     text-align: left;
 }
 
-/* Items inside sections - no padding (section already has 6px) */
-.subnav-section .subnav-item {
-    padding: 0;
-}
-
-/* Expandable items in sections need right padding for chevron */
-.subnav-section .subnav-item-expandable {
-    padding-right: 36px;
+/* Expandable items need extra right padding for chevron */
+.subnav-item-expandable {
+    padding-right: 42px; /* 42px right for chevron - matches production */
 }
 
 .subnav-item:hover {
@@ -593,7 +588,7 @@ body {
 .subnav-item-expandable::before {
     content: '';
     position: absolute;
-    right: 0;
+    right: 6px; /* 6px from right edge of sub-navigation */
     top: 0;
     width: 36px;
     height: 36px;
@@ -615,7 +610,7 @@ body {
     opacity: 0.5;
     transition: transform 0.2s ease, opacity 0.2s ease;
     position: absolute;
-    right: 9px;
+    right: 15px; /* 6px + (36px - 18px) / 2 = 6px + 9px = 15px for centering */
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -647,7 +642,7 @@ body {
 }
 
 .subnav-section-header {
-    padding: 0 18px 12px 18px;
+    padding: 6px 12px 12px 12px; /* Matches production - 12px left */
     margin-bottom: 0;
 }
 
