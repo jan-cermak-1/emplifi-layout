@@ -54,6 +54,14 @@
     box-sizing: border-box;
 }
 
+/* Custom Elements Display Fix */
+main-navigation,
+sub-navigation,
+header-bar,
+content-area {
+    display: block;
+}
+
 html, body {
     height: 100%;
     overflow: hidden;
