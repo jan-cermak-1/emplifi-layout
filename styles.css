@@ -519,9 +519,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 6px;
+    gap: 12px;
     height: 36px;
-    padding: 0;
+    padding: 0 6px;
     background: transparent;
     border: none;
     border-radius: 6px;
@@ -648,12 +648,12 @@ body {
     line-height: 12px;
     letter-spacing: 0.01px;
     text-transform: uppercase;
-    color: rgb(8, 115, 156);
+    color: rgb(80, 80, 87); /* Default gray */
 }
 
-/* Discover and other sections - gray */
-.subnav-section:not(:first-of-type) .subnav-section-title {
-    color: rgb(80, 80, 87);
+/* Early Access - blue */
+.subnav-section-title--early-access {
+    color: rgb(8, 115, 156);
 }
 
 /* ========================================
