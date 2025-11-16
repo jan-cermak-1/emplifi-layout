@@ -54,7 +54,7 @@ class HeaderBar extends HTMLElement {
             </div>
             <div class="header-right">
                 <button class="header-btn header-fullscreen-btn" aria-label="Fullscreen">
-                    <img src="assets/una/header/Maximize, Fullscreen.svg" alt="Fullscreen" />
+                    <img src="assets/una/header/Maximize Fullscreen.svg" alt="Fullscreen" />
                 </button>
             </div>
         `;
