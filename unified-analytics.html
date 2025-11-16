@@ -39,10 +39,10 @@
     <!-- Load Web Components with cache busting -->
     <script type="module">
         const timestamp = '?v=' + Date.now();
-        import('./components/main-navigation.js' + timestamp);
-        import('./components/sub-navigation.js' + timestamp);
-        import('./components/header-bar.js' + timestamp);
-        import('./components/content-area.js' + timestamp);
+        await import('./components/main-navigation.js' + timestamp);
+        await import('./components/sub-navigation.js' + timestamp);
+        await import('./components/header-bar.js' + timestamp);
+        await import('./components/content-area.js' + timestamp);
     </script>
 </body>
 </html>
