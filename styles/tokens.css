@@ -1,0 +1,267 @@
+/**
+ * Soul Design System - Design Tokens
+ * Extracted from current implementation and Soul DS documentation
+ * 
+ * References:
+ * - Colors: https://soul.dev.emplifi.io/?path=/docs/styles-variables-colors--overview
+ * - Spacing: https://soul.dev.emplifi.io/?path=/docs/styles-variables-spacing--overview
+ * - Shadows: https://soul.dev.emplifi.io/?path=/docs/styles-variables-shadows--overview
+ * - Border Radius: https://soul.dev.emplifi.io/?path=/docs/styles-variables-border-radius--overview
+ * - Motion: https://soul.dev.emplifi.io/?path=/docs/styles-variables-motion--overview
+ * - Fonts: https://soul.dev.emplifi.io/?path=/docs/styles-mixins-fonts--overview
+ */
+
+:root {
+  /* ===== COLORS ===== */
+  
+  /* Layer Colors */
+  --color-layer-level-0: #ffffff;
+  --color-layer-level-1: #f9f9fa;
+  --color-layer-level-2: #f3f3f5;
+  --color-layer-level-3: #ededee;
+  
+  /* On-Layer Colors (text, icons on layers) */
+  --color-on-layer-primary: #24242b;
+  --color-on-layer-secondary: #505057;
+  --color-on-layer-tertiary: #9d9da0;
+  --color-on-layer-inverse: #ffffff;
+  
+  /* Surface Colors (specific components) */
+  --color-surface-primary: #111114;
+  --color-surface-secondary: #24242b;
+  --color-surface-hover: #313137;
+  
+  /* Interactive Colors */
+  --color-interactive-primary: #0873c5;
+  --color-interactive-primary-hover: #065ea2;
+  --color-interactive-primary-pressed: #054c84;
+  --color-interactive-secondary: #f3f3f5;
+  --color-interactive-secondary-hover: #ededee;
+  
+  /* Border Colors */
+  --color-border-primary: rgba(0, 0, 0, 0.2);
+  --color-border-secondary: rgba(0, 0, 0, 0.1);
+  --color-border-focus: #0873c5;
+  
+  /* Feedback Colors */
+  --color-feedback-success: #0b6b2e;
+  --color-feedback-success-bg: #e7f5ec;
+  --color-feedback-warning: #c77700;
+  --color-feedback-warning-bg: #fff4e5;
+  --color-feedback-error: #c91432;
+  --color-feedback-error-bg: #fde7eb;
+  --color-feedback-info: #0873c5;
+  --color-feedback-info-bg: #e7f2fa;
+  
+  /* Badge Colors */
+  --color-badge-blue: #08739c;
+  --color-badge-blue-bg: #e7f2f7;
+  --color-badge-gray: #505057;
+  --color-badge-gray-bg: #f3f3f5;
+  
+  /* ===== SPACING ===== */
+  
+  /* Based on 6px grid system */
+  --spacing-xxxs: 2px;
+  --spacing-xxs: 4px;
+  --spacing-xs: 6px;
+  --spacing-sm: 12px;
+  --spacing-md: 18px;
+  --spacing-lg: 24px;
+  --spacing-xl: 36px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 60px;
+  
+  /* Component-specific spacing */
+  --spacing-nav-padding: 6px;
+  --spacing-nav-gap: 6px;
+  --spacing-header-padding-default: 24px;
+  --spacing-header-padding-large: 36px;
+  --spacing-content-padding-default: 24px;
+  --spacing-content-padding-large: 36px;
+  
+  /* ===== SHADOWS ===== */
+  
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* ===== BORDER RADIUS ===== */
+  
+  --border-radius-xs: 2px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 12px;
+  --border-radius-2xl: 16px;
+  --border-radius-full: 9999px;
+  
+  /* ===== MOTION (Animations & Transitions) ===== */
+  
+  /* Duration */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 400ms;
+  
+  /* Easing */
+  --easing-linear: linear;
+  --easing-ease: ease;
+  --easing-ease-in: ease-in;
+  --easing-ease-out: ease-out;
+  --easing-ease-in-out: ease-in-out;
+  
+  /* Common transitions */
+  --transition-fast: all var(--duration-fast) var(--easing-ease-out);
+  --transition-normal: all var(--duration-normal) var(--easing-ease-out);
+  --transition-slow: all var(--duration-slow) var(--easing-ease-out);
+  
+  /* ===== TYPOGRAPHY ===== */
+  
+  /* Font Family */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono: 'Roboto Mono', 'Courier New', monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 10px;
+  --font-size-sm: 12px;
+  --font-size-md: 13px;
+  --font-size-lg: 14px;
+  --font-size-xl: 16px;
+  --font-size-2xl: 18px;
+  --font-size-3xl: 20px;
+  --font-size-4xl: 24px;
+  --font-size-5xl: 32px;
+  
+  /* Line Heights */
+  --line-height-xs: 12px;
+  --line-height-sm: 18px;
+  --line-height-md: 20px;
+  --line-height-lg: 24px;
+  --line-height-xl: 30px;
+  --line-height-2xl: 36px;
+  
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.017px;
+  --letter-spacing-normal: 0px;
+  --letter-spacing-wide: 0.01px;
+  
+  /* ===== LAYOUT ===== */
+  
+  /* Navigation widths */
+  --main-nav-width: 60px;
+  --main-nav-width-open: 240px;
+  --sub-nav-width: 240px;
+  
+  /* Header height */
+  --header-height: 60px;
+  
+  /* Breakpoints (for reference, use in media queries) */
+  --breakpoint-large: 1560px;
+  
+  /* Z-index scale */
+  --z-index-base: 1;
+  --z-index-dropdown: 10;
+  --z-index-sticky: 20;
+  --z-index-fixed: 30;
+  --z-index-modal-backdrop: 40;
+  --z-index-modal: 50;
+  --z-index-popover: 60;
+  --z-index-tooltip: 70;
+}
+
+/* ===== TYPOGRAPHY MIXINS (as classes) ===== */
+
+/* Headlines */
+.headline-1 {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-medium);
+  line-height: 48px;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.headline-2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.headline-3 {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-lg);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Body text */
+.body-large {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-md);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.body-medium {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-sm);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.body-medium-bold {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-sm);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.body-small {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-sm);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Labels */
+.label-uppercase {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Font features (Inter specific) */
+.font-features-default {
+  font-variant-numeric: slashed-zero;
+  font-feature-settings: 'ss04' on, 'cv05' on, 'cv08' on, 'liga' off, 'clig' off;
+}
+
+/* Font rendering */
+.font-smooth {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
