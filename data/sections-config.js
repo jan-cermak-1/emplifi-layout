@@ -74,8 +74,8 @@ export const sectionsConfig = {
             header: {
                 menuIcon: 'assets/una/header/Menu hamburger.svg',
                 searchIcon: 'assets/una/header/Search.svg',
-                fullscreenIcon: 'assets/una/header/Maximize, Fullscreen.svg',
-                minimizeIcon: 'assets/una/header/Minimize- fulsscreen.svg'
+                fullscreenIcon: 'assets/una/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/una/header/Minimize Fullscreen.svg'
             }
         }
     },
