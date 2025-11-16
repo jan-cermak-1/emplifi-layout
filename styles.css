@@ -87,6 +87,7 @@ body {
    Implements Soul Design System navigation
    ======================================== */
 
+main-navigation,
 .main-navigation {
     background-color: var(--color-on-layer-primary);
     width: var(--main-nav-width);
@@ -351,6 +352,7 @@ body {
    240px wide, fixed, with right border
    ======================================== */
 
+sub-navigation,
 .sub-navigation {
     background-color: var(--color-layer-level-1);
     width: var(--sub-nav-width);
@@ -371,6 +373,7 @@ body {
 }
 
 /* Closed state - slide out to the left */
+sub-navigation.is-closed,
 .sub-navigation.is-closed {
     transform: translateX(calc(-100% - var(--main-nav-width)));
 }
@@ -686,6 +689,7 @@ body {
    60px high, fixed top, with bottom border
    ======================================== */
 
+header-bar,
 .header {
     background-color: var(--color-layer-level-1);
     height: var(--header-height);
@@ -828,6 +832,7 @@ body:not(.subnav-closed) .header-divider {
    Scrollable, with responsive padding
    ======================================== */
 
+content-area,
 .content {
     background-color: var(--color-layer-level-0);
     flex: 1;
@@ -842,6 +847,7 @@ body:not(.subnav-closed) .header-divider {
 }
 
 /* When sub-navigation is closed, adjust content margin */
+.subnav-closed content-area,
 .subnav-closed .content {
     margin-left: var(--main-nav-width);
 }
@@ -922,41 +928,55 @@ body:not(.subnav-closed) .header-divider {
    ======================================== */
 
 /* Main navigation hidden state */
+main-navigation.mainnav-hidden,
 .main-navigation.mainnav-hidden,
-body.mainnav-hidden .main-navigation {
+body.mainnav-hidden .main-navigation,
+body.mainnav-hidden main-navigation {
     transform: translateX(-100%);
 }
 
 /* Sub-navigation adjusts when main nav is hidden */
+sub-navigation.mainnav-hidden,
 .sub-navigation.mainnav-hidden,
-body.mainnav-hidden .sub-navigation {
+body.mainnav-hidden .sub-navigation,
+body.mainnav-hidden sub-navigation {
     left: 0;
 }
 
 /* Header adjusts when main nav is hidden */
+header-bar.mainnav-hidden,
 .header.mainnav-hidden,
-body.mainnav-hidden .header {
+body.mainnav-hidden .header,
+body.mainnav-hidden header-bar {
     left: var(--sub-nav-width);
 }
 
 /* Content adjusts when main nav is hidden */
+content-area.mainnav-hidden,
 .content.mainnav-hidden,
-body.mainnav-hidden .content {
+body.mainnav-hidden .content,
+body.mainnav-hidden content-area {
     margin-left: var(--sub-nav-width);
 }
 
 /* When both main nav is hidden AND sub nav is closed */
+sub-navigation.mainnav-hidden.is-closed,
 .sub-navigation.mainnav-hidden.is-closed,
-body.mainnav-hidden.subnav-closed .sub-navigation {
+body.mainnav-hidden.subnav-closed .sub-navigation,
+body.mainnav-hidden.subnav-closed sub-navigation {
     transform: translateX(calc(-100%));
 }
 
+header-bar.mainnav-hidden.subnav-closed,
 .header.mainnav-hidden.subnav-closed,
-body.mainnav-hidden.subnav-closed .header {
+body.mainnav-hidden.subnav-closed .header,
+body.mainnav-hidden.subnav-closed header-bar {
     left: 0;
 }
 
+content-area.mainnav-hidden.subnav-closed,
 .content.mainnav-hidden.subnav-closed,
-body.mainnav-hidden.subnav-closed .content {
+body.mainnav-hidden.subnav-closed .content,
+body.mainnav-hidden.subnav-closed content-area {
     margin-left: 0;
 }
