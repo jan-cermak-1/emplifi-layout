@@ -141,13 +141,24 @@ class MainNavigation extends HTMLElement {
         });
 
         // Hover to expand main navigation
-        this.addEventListener('mouseenter', () => {
+        // Remove existing listeners if any (to prevent duplicates)
+        if (this._hoverEnterHandler) {
+            this.removeEventListener('mouseenter', this._hoverEnterHandler);
+        }
+        if (this._hoverLeaveHandler) {
+            this.removeEventListener('mouseleave', this._hoverLeaveHandler);
+        }
+        
+        // Create new handlers
+        this._hoverEnterHandler = () => {
             this.classList.add('is-open');
-        });
-
-        this.addEventListener('mouseleave', () => {
+        };
+        this._hoverLeaveHandler = () => {
             this.classList.remove('is-open');
-        });
+        };
+        
+        this.addEventListener('mouseenter', this._hoverEnterHandler);
+        this.addEventListener('mouseleave', this._hoverLeaveHandler);
     }
 
     /**

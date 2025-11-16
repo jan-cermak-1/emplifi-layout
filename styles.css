@@ -360,16 +360,6 @@ main-navigation.is-open .nav-label,
     display: block;
 }
 
-/* Open State (210px wide) */
-.main-navigation.is-open {
-    width: 210px;
-}
-
-.main-navigation.is-open .nav-label,
-.main-navigation.is-open .nav-add-label {
-    opacity: 1;
-}
-
 /* ========================================
    Sub Navigation (Section Navigation)
    240px wide, fixed, with right border
