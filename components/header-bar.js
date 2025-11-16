@@ -65,12 +65,16 @@ class HeaderBar extends HTMLElement {
      */
     renderPlaceholder(section) {
         const menuIcon = section.assets?.header?.menuIcon || 'assets/main-navigation/logo/Emplifi - menu close.svg';
+        const searchIcon = section.assets?.header?.searchIcon || 'assets/una/header/Search.svg';
         const fullscreenIcon = section.assets?.header?.fullscreenIcon || 'assets/main-navigation/logo/Emplifi - menu close.svg';
         
         this.innerHTML = `
             <div class="header-left">
                 <button class="header-btn header-toggle-subnav" aria-label="Open sub-navigation">
                     <img src="${menuIcon}" alt="Menu" />
+                </button>
+                <button class="header-btn header-search-btn" aria-label="Search">
+                    <img src="${searchIcon}" alt="Search" />
                 </button>
                 <div class="header-divider"></div>
                 <h1 class="header-title">${section.name}</h1>

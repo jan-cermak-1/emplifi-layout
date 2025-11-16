@@ -29,6 +29,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/command-center/header/Menu hamburger.svg',
+                searchIcon: 'assets/command-center/header/Search.svg',
                 fullscreenIcon: 'assets/command-center/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/command-center/header/Minimize Fullscreen.svg'
             }
@@ -51,6 +52,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/dashboard/header/Menu hamburger.svg',
+                searchIcon: 'assets/dashboard/header/Search.svg',
                 fullscreenIcon: 'assets/dashboard/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/dashboard/header/Minimize Fullscreen.svg'
             }
@@ -96,6 +98,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/publisher/header/Menu hamburger.svg',
+                searchIcon: 'assets/publisher/header/Search.svg',
                 fullscreenIcon: 'assets/publisher/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/publisher/header/Minimize Fullscreen.svg'
             }
@@ -118,6 +121,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/community/header/Menu hamburger.svg',
+                searchIcon: 'assets/community/header/Search.svg',
                 fullscreenIcon: 'assets/community/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/community/header/Minimize Fullscreen.svg'
             }
@@ -140,6 +144,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/care/header/Menu hamburger.svg',
+                searchIcon: 'assets/care/header/Search.svg',
                 fullscreenIcon: 'assets/care/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/care/header/Minimize Fullscreen.svg'
             }
@@ -162,6 +167,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/content/header/Menu hamburger.svg',
+                searchIcon: 'assets/content/header/Search.svg',
                 fullscreenIcon: 'assets/content/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/content/header/Minimize Fullscreen.svg'
             }
@@ -184,6 +190,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/ugc/header/Menu hamburger.svg',
+                searchIcon: 'assets/ugc/header/Search.svg',
                 fullscreenIcon: 'assets/ugc/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/ugc/header/Minimize Fullscreen.svg'
             }
@@ -206,6 +213,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/bot/header/Menu hamburger.svg',
+                searchIcon: 'assets/bot/header/Search.svg',
                 fullscreenIcon: 'assets/bot/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/bot/header/Minimize Fullscreen.svg'
             }
@@ -228,6 +236,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/ratings-reviews/header/Menu hamburger.svg',
+                searchIcon: 'assets/ratings-reviews/header/Search.svg',
                 fullscreenIcon: 'assets/ratings-reviews/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/ratings-reviews/header/Minimize Fullscreen.svg'
             }
@@ -250,6 +259,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/help-support/header/Menu hamburger.svg',
+                searchIcon: 'assets/help-support/header/Search.svg',
                 fullscreenIcon: 'assets/help-support/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/help-support/header/Minimize Fullscreen.svg'
             }
@@ -272,6 +282,7 @@ export const sectionsConfig = {
             },
             header: {
                 menuIcon: 'assets/settings/header/Menu hamburger.svg',
+                searchIcon: 'assets/settings/header/Search.svg',
                 fullscreenIcon: 'assets/settings/header/Maximize Fullscreen.svg',
                 minimizeIcon: 'assets/settings/header/Minimize Fullscreen.svg'
             }
