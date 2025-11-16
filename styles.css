@@ -512,7 +512,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 0 6px; /* 6px left/right padding on container */
+    padding: 0 6px;
 }
 
 .subnav-item {
@@ -521,7 +521,7 @@ body {
     justify-content: flex-start;
     gap: 6px;
     height: 36px;
-    padding: 0; /* No padding - container has 6px */
+    padding: 0;
     background: transparent;
     border: none;
     border-radius: 6px;
@@ -530,21 +530,6 @@ body {
     transition: background-color 0.2s ease;
     margin-bottom: 0;
     text-align: left;
-}
-
-/* Items in sections need left padding for icon alignment */
-.subnav-section .subnav-item {
-    padding: 0 0 0 6px; /* 6px left padding for total 12px from edge */
-}
-
-/* Expandable items need extra right padding for chevron */
-.subnav-item-expandable {
-    padding-right: 36px; /* 36px right for chevron */
-}
-
-/* Expandable in sections */
-.subnav-section .subnav-item-expandable {
-    padding-right: 36px; /* Maintain chevron space */
 }
 
 .subnav-item:hover {
@@ -577,7 +562,7 @@ body {
 .subnav-item-expandable {
     justify-content: flex-start;
     position: relative;
-    /* padding-right set by context - see .subnav-section .subnav-item-expandable */
+    padding-right: 36px;
 }
 
 /* Chevron wrapper - positioned absolutely to create centered hover area */
@@ -598,7 +583,7 @@ body {
 .subnav-item-expandable::before {
     content: '';
     position: absolute;
-    right: 6px; /* 6px from right edge of sub-navigation */
+    right: 0;
     top: 0;
     width: 36px;
     height: 36px;
@@ -620,7 +605,7 @@ body {
     opacity: 0.5;
     transition: transform 0.2s ease, opacity 0.2s ease;
     position: absolute;
-    right: 15px; /* 6px + (36px - 18px) / 2 = 6px + 9px = 15px for centering */
+    right: 9px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
@@ -652,7 +637,7 @@ body {
 }
 
 .subnav-section-header {
-    padding: 6px 12px 12px 12px; /* Matches production - 12px left */
+    padding: 0 18px 12px 18px;
     margin-bottom: 0;
 }
 
@@ -663,12 +648,12 @@ body {
     line-height: 12px;
     letter-spacing: 0.01px;
     text-transform: uppercase;
-    color: rgb(80, 80, 87); /* Default gray for all sections */
+    color: rgb(8, 115, 156);
 }
 
-/* Early Access section only - blue */
-.subnav-section:first-of-type .subnav-section-title {
-    color: rgb(8, 115, 156);
+/* Discover and other sections - gray */
+.subnav-section:not(:first-of-type) .subnav-section-title {
+    color: rgb(80, 80, 87);
 }
 
 /* ========================================
