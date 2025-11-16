@@ -512,7 +512,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 0; /* No padding on container */
+    padding: 0 6px; /* 6px left/right padding on container */
 }
 
 .subnav-item {
@@ -521,7 +521,7 @@ body {
     justify-content: flex-start;
     gap: 6px;
     height: 36px;
-    padding: 0 12px; /* 12px left and right - matches production */
+    padding: 0; /* No padding - container has 6px */
     background: transparent;
     border: none;
     border-radius: 6px;
@@ -532,9 +532,19 @@ body {
     text-align: left;
 }
 
+/* Items in sections need left padding for icon alignment */
+.subnav-section .subnav-item {
+    padding: 0 0 0 6px; /* 6px left padding for total 12px from edge */
+}
+
 /* Expandable items need extra right padding for chevron */
 .subnav-item-expandable {
-    padding-right: 42px; /* 42px right for chevron - matches production */
+    padding-right: 36px; /* 36px right for chevron */
+}
+
+/* Expandable in sections */
+.subnav-section .subnav-item-expandable {
+    padding-right: 36px; /* Maintain chevron space */
 }
 
 .subnav-item:hover {
