@@ -616,8 +616,12 @@ body {
 }
 
 /* Add special hover highlight when hovering specifically over chevron area */
+.subnav-item-expandable.chevron-hover {
+    background-color: #f3f3f5; /* Whole item background changes */
+}
+
 .subnav-item-expandable.chevron-hover::before {
-    background-color: #EDEDEE;
+    background-color: #EDEDEE; /* Chevron area has its own hover color */
 }
 
 .subnav-item-expandable.is-expanded .subnav-item-chevron {
