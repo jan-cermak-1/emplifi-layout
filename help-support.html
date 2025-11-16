@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Help & Support - Emplifi</title>
     
     <!-- Favicon -->
@@ -31,11 +34,14 @@
         
     </div>
     
-    <!-- Load Web Components -->
-    <script type="module" src="components/main-navigation.js"></script>
-    <script type="module" src="components/sub-navigation.js"></script>
-    <script type="module" src="components/header-bar.js"></script>
-    <script type="module" src="components/content-area.js"></script>
+    <!-- Load Web Components with cache busting -->
+    <script type="module">
+        const timestamp = '?v=' + Date.now();
+        import('./components/main-navigation.js' + timestamp);
+        import('./components/sub-navigation.js' + timestamp);
+        import('./components/header-bar.js' + timestamp);
+        import('./components/content-area.js' + timestamp);
+    </script>
 </body>
 </html>
 
