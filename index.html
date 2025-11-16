@@ -4,345 +4,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emplifi Layout - Soul Design System</title>
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
-    <!-- Inter Font - Self-hosted (matching production) -->
     <link rel="preconnect" href="https://base.cdn.emplifi.io">
     <link href="https://base.cdn.emplifi.io/suite/misc/fonts/Inter/inter.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/tokens.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family-primary);
+            background: var(--color-layer-level-0);
+            color: var(--color-on-layer-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .landing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xxl) var(--spacing-lg);
+        }
+        
+        .landing-header {
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: var(--font-weight-medium);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-on-layer-primary);
+        }
+        
+        .subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--color-on-layer-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .description {
+            font-size: var(--font-size-lg);
+            color: var(--color-on-layer-secondary);
+            max-width: 800px;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-medium);
+            margin-top: var(--spacing-xxl);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .section-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-lg);
+            background: var(--color-layer-level-1);
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--border-radius-lg);
+            text-decoration: none;
+            color: inherit;
+            transition: all var(--duration-normal) var(--easing-ease-out);
+        }
+        
+        .section-card:hover {
+            background: var(--color-layer-level-2);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .section-name {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-on-layer-primary);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: var(--border-radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+        }
+        
+        .badge-complete {
+            background: var(--color-feedback-success-bg);
+            color: var(--color-feedback-success);
+        }
+        
+        .badge-placeholder {
+            background: var(--color-badge-gray-bg);
+            color: var(--color-badge-gray);
+        }
+        
+        .component-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+        
+        .stat-card {
+            padding: var(--spacing-lg);
+            background: var(--color-layer-level-1);
+            border: 1px solid var(--color-border-primary);
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-interactive-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .stat-label {
+            font-size: var(--font-size-md);
+            color: var(--color-on-layer-secondary);
+        }
+        
+        .info-section {
+            margin-top: var(--spacing-xxl);
+            padding: var(--spacing-lg);
+            background: var(--color-layer-level-1);
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-section li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--color-border-secondary);
+        }
+        
+        .info-section li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-section a {
+            color: var(--color-interactive-primary);
+            text-decoration: none;
+        }
+        
+        .info-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <!-- Layout Container -->
-    <div class="layout" data-name="emplifi-layout-basic">
-        
-        <!-- Main Navigation (Platform Navigation) -->
-        <nav class="main-navigation" data-name="main-navigation">
-            <!-- Logo -->
-            <div class="nav-logo">
-                <a href="#" class="nav-logo-link" id="nav-logo-reload">
-                    <!-- Logo Icon (always visible) -->
-                    <img src="assets/logo/Emplifi - menu close.svg" alt="Emplifi" class="nav-logo-icon" />
-                    <!-- Logo Text (visible when open) -->
-                    <img src="assets/logo/Full logo menu open.svg" alt="emplifi" class="nav-logo-text" />
-                </a>
-            </div>
-            
-            <!-- Scroll Area with Apps -->
-            <div class="nav-scroll-area">
-                <div class="nav-apps">
-                    <!-- Command Center -->
-                    <button class="nav-item" data-section="command-center" 
-                            data-icon-default="assets/icons-main navigation/normal/Home.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Home.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Home.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Home.svg" alt="Command Center" />
-                        </span>
-                        <span class="nav-label">Command center</span>
-                    </button>
-                    
-                    <!-- Dashboard -->
-                    <button class="nav-item" data-section="dashboard"
-                            data-icon-default="assets/icons-main navigation/normal/Dashboard.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Dashboard.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Dashboard.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Dashboard.svg" alt="Dashboard" />
-                        </span>
-                        <span class="nav-label">Dashboard</span>
-                    </button>
-                    
-                    <!-- Unified Analytics -->
-                    <button class="nav-item" data-section="analytics"
-                            data-icon-default="assets/icons-main navigation/normal/Unified Analytics.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Unified Analytics.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Unified Analytics.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Unified Analytics.svg" alt="Unified Analytics" />
-                        </span>
-                        <span class="nav-label">Unified Analytics</span>
-                    </button>
-                    
-                    <!-- Publisher -->
-                    <button class="nav-item" data-section="publisher"
-                            data-icon-default="assets/icons-main navigation/normal/Publisher.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Publisher.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Publisher.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Publisher.svg" alt="Publisher" />
-                        </span>
-                        <span class="nav-label">Publisher</span>
-                    </button>
-                    
-                    <!-- Community -->
-                    <button class="nav-item" data-section="community"
-                            data-icon-default="assets/icons-main navigation/normal/Community.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Community.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Community.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Community.svg" alt="Community" />
-                        </span>
-                        <span class="nav-label">Community</span>
-                    </button>
-                    
-                    <!-- Care -->
-                    <button class="nav-item" data-section="care"
-                            data-icon-default="assets/icons-main navigation/normal/Care.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Care.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Care.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Care.svg" alt="Care" />
-                        </span>
-                        <span class="nav-label">Care</span>
-                    </button>
-                    
-                    <!-- Content -->
-                    <button class="nav-item" data-section="content"
-                            data-icon-default="assets/icons-main navigation/normal/Content.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Content.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Content.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Content.svg" alt="Content" />
-                        </span>
-                        <span class="nav-label">Content</span>
-                    </button>
-                    
-                    <!-- UGC -->
-                    <button class="nav-item" data-section="ugc"
-                            data-icon-default="assets/icons-main navigation/normal/User Generated Content.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/User Generated Content.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/User Generated Content.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/User Generated Content.svg" alt="UCG" />
-                        </span>
-                        <span class="nav-label">UCG</span>
-                    </button>
-                    
-                    <!-- Bot -->
-                    <button class="nav-item" data-section="bot"
-                            data-icon-default="assets/icons-main navigation/normal/Bot.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Bot.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Bot.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Bot.svg" alt="Bot" />
-                        </span>
-                        <span class="nav-label">Bot</span>
-                    </button>
-                    
-                    <!-- Rating & Reviews -->
-                    <button class="nav-item" data-section="reviews"
-                            data-icon-default="assets/icons-main navigation/normal/Rating & Reviews.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Rating & Reviews.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Rating & Reviews.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Rating & Reviews.svg" alt="Rating & Reviews" />
-                        </span>
-                        <span class="nav-label">Rating & Reviews</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Bottom Part -->
-            <div class="nav-bottom">
-                <!-- General Section -->
-                <div class="nav-general">
-                    <!-- Help & Support -->
-                    <button class="nav-item" data-section="help"
-                            data-icon-default="assets/icons-main navigation/normal/Help.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Help.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Help.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Help.svg" alt="Help & Support" />
-                        </span>
-                        <span class="nav-label">Help & Support</span>
-                    </button>
-                    
-                    <!-- Settings -->
-                    <button class="nav-item" data-section="settings"
-                            data-icon-default="assets/icons-main navigation/normal/Settings.svg"
-                            data-icon-hover="assets/icons-main navigation/hover/Settings.svg"
-                            data-icon-selected="assets/icons-main navigation/isSelected/Settings.svg">
-                        <span class="nav-icon">
-                            <img src="assets/icons-main navigation/normal/Settings.svg" alt="Settings" />
-                        </span>
-                        <span class="nav-label">Settings</span>
-                    </button>
-                    
-                    <!-- User Profile -->
-                    <div class="nav-item nav-user" data-section="user">
-                        <div class="nav-avatar">
-                            <img src="assets/9ce1b58aecd4ef61664409fcdd66adf48254ccb2.png" alt="User" />
-                            <span class="nav-notifications">41</span>
-                        </div>
-                        <span class="nav-label">Jan Čermák</span>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Sub Navigation (Section Navigation) -->
-        <aside class="sub-navigation" data-name="sub-navigation" data-section="unified-analytics">
-            <!-- Section Title -->
-            <div class="subnav-header">
-                <h1 class="subnav-title">Unified Analytics</h1>
-                <button class="subnav-collapse-btn" aria-label="Close sub-navigation">
-                    <img src="assets/submenu-UNA/Menu close.svg" alt="" class="subnav-collapse-icon" />
-                </button>
-            </div>
-            
-            <!-- Scrollable Content -->
-            <div class="subnav-content">
-                <!-- Top Actions -->
-                <div class="subnav-actions">
-                <button class="subnav-action-btn" data-action="search">
-                    <img src="assets/icons-subnavigation/search.svg" alt="Search" class="subnav-action-icon" />
-                    <span class="subnav-action-label">Search...</span>
-                </button>
-                <button class="subnav-action-btn" data-action="new">
-                    <img src="assets/icons-subnavigation/plus.svg" alt="New" class="subnav-action-icon" />
-                    <span class="subnav-action-label">New</span>
-                </button>
-            </div>
-            
-            <!-- Section: Main Items -->
-            <div class="subnav-section subnav-section--main">
-                <nav class="subnav-items">
-                    <button class="subnav-item is-active" data-page="home">
-                        <img src="assets/submenu-UNA/Overview.svg" alt="Home" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Home</span>
-                    </button>
-                    <button class="subnav-item" data-page="objectives">
-                        <img src="assets/submenu-UNA/Campaign objective.svg" alt="Objectives" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Objectives</span>
-                    </button>
-                </nav>
-            </div>
-            
-            <!-- Section: Early Access -->
-            <div class="subnav-section">
-                <div class="subnav-section-header">
-                    <span class="subnav-section-title subnav-section-title--early-access">Early Access</span>
-                </div>
-                <nav class="subnav-items">
-                    <button class="subnav-item subnav-item-expandable" data-page="my-boards">
-                        <img src="assets/submenu-UNA/Dashboard.svg" alt="My boards" class="subnav-item-icon" />
-                        <span class="subnav-item-label">My boards</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="shared">
-                        <img src="assets/submenu-UNA/Shared view.svg" alt="Shared with me" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Shared with me</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="professional">
-                        <img src="assets/submenu-UNA/professional services.svg" alt="Professional services" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Professional services</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                </nav>
-            </div>
-            
-            <!-- Section: Discover -->
-            <div class="subnav-section">
-                <div class="subnav-section-header">
-                    <span class="subnav-section-title">Discover</span>
-                </div>
-                <nav class="subnav-items">
-                    <button class="subnav-item subnav-item-expandable" data-page="social-profiles">
-                        <img src="assets/submenu-UNA/Profile.svg" alt="Social profiles" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Social profiles</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="paid">
-                        <img src="assets/submenu-UNA/Ad account.svg" alt="Paid" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Paid</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="campaigns">
-                        <img src="assets/submenu-UNA/Campaign.svg" alt="Campaigns & labels" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Campaigns & labels</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="listening">
-                        <img src="assets/submenu-UNA/Listening query.svg" alt="Listening" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Listening</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="care">
-                        <img src="assets/submenu-UNA/Care app.svg" alt="Care" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Care</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="bot">
-                        <img src="assets/submenu-UNA/Bot.svg" alt="Bot" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Bot</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="community">
-                        <img src="assets/submenu-UNA/Community.svg" alt="Community" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Community</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="link-bio">
-                        <img src="assets/submenu-UNA/Link in Bio.svg" alt="Link in Bio" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Link in Bio</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="live-commerce">
-                        <img src="assets/submenu-UNA/Live Commerce.svg" alt="Live Commerce" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Live Commerce</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item subnav-item-expandable" data-page="ugc">
-                        <img src="assets/submenu-UNA/User Generated Content app.svg" alt="UGC" class="subnav-item-icon" />
-                        <span class="subnav-item-label">UGC</span>
-                        <img src="assets/submenu-UNA/Chevron down.svg" alt="" class="subnav-item-chevron" />
-                    </button>
-                    <button class="subnav-item" data-page="ratings">
-                        <img src="assets/submenu-UNA/Rating & Reviews app.svg" alt="Ratings & Reviews" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Ratings & Reviews</span>
-                    </button>
-                    <button class="subnav-item" data-page="knowledge">
-                        <img src="assets/submenu-UNA/Knowledge app.svg" alt="Knowledge" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Knowledge</span>
-                    </button>
-                    <button class="subnav-item" data-page="agent">
-                        <img src="assets/submenu-UNA/Agent app.svg" alt="Agent" class="subnav-item-icon" />
-                        <span class="subnav-item-label">Agent</span>
-                    </button>
-                </nav>
-            </div>
-            </div>
-        </aside>
-        
-        <!-- Header -->
-        <header class="header" data-name="header">
-            <div class="header-left">
-                <button class="header-btn header-toggle-subnav" aria-label="Open sub-navigation">
-                    <img src="assets/header-UNA/Menu hamburger.svg" alt="Menu" />
-                </button>
-                <button class="header-btn header-search-btn" aria-label="Search">
-                    <img src="assets/header-UNA/Search.svg" alt="Search" />
-                </button>
-                <div class="header-divider"></div>
-                <h1 class="header-title">Home</h1>
-            </div>
-            <div class="header-right">
-                <button class="header-btn header-fullscreen-btn" aria-label="Fullscreen">
-                    <img src="assets/header-UNA/Maximize, Fullscreen.svg" alt="Fullscreen" />
-                </button>
-            </div>
+    <div class="landing-container">
+        <header class="landing-header">
+            <img src="assets/main-navigation/logo/Full logo menu open.svg" alt="Emplifi" class="logo">
+            <h1>Emplifi Layout Components</h1>
+            <p class="subtitle">Soul Design System - Atomic Component Library</p>
+            <p class="description">
+                Funkční responzivní layout postavený na atomickém designu s Web Components (Vanilla JS).
+                Všechny komponenty následují Soul Design System a jsou připraveny pro rozšíření.
+            </p>
         </header>
         
-        <!-- Content Area -->
-        <main class="content" data-name="content">
-            <!-- Main content will be added here -->
-        </main>
+        <section>
+            <h2>Component Architecture</h2>
+            <div class="component-stats">
+                <div class="stat-card">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">Atoms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Molecules</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Organisms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Sections</div>
+                </div>
+            </div>
+        </section>
         
+        <section>
+            <h2>Available Sections</h2>
+            <div class="section-grid">
+                <a href="unified-analytics.html" class="section-card">
+                    <span class="section-name">Unified Analytics</span>
+                    <span class="badge badge-complete">Complete</span>
+                </a>
+                
+                <a href="command-center.html" class="section-card">
+                    <span class="section-name">Command Center</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="dashboard.html" class="section-card">
+                    <span class="section-name">Dashboard</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="publisher.html" class="section-card">
+                    <span class="section-name">Publisher</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="community.html" class="section-card">
+                    <span class="section-name">Community</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="care.html" class="section-card">
+                    <span class="section-name">Care</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="content.html" class="section-card">
+                    <span class="section-name">Content</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="ugc.html" class="section-card">
+                    <span class="section-name">UGC</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="bot.html" class="section-card">
+                    <span class="section-name">Bot</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="ratings-reviews.html" class="section-card">
+                    <span class="section-name">Ratings & Reviews</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="help-support.html" class="section-card">
+                    <span class="section-name">Help & Support</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+                
+                <a href="settings.html" class="section-card">
+                    <span class="section-name">Settings</span>
+                    <span class="badge badge-placeholder">Placeholder</span>
+                </a>
+            </div>
+        </section>
+        
+        <section class="info-section">
+            <h2>Documentation & Resources</h2>
+            <ul>
+                <li><strong>Component Library:</strong> <a href="COMPONENT_LIBRARY.md">COMPONENT_LIBRARY.md</a></li>
+                <li><strong>README:</strong> <a href="README.md">README.md</a></li>
+                <li><strong>GitHub Repository:</strong> <a href="https://github.com/jan-cermak-1/emplifi-layout" target="_blank">emplifi-layout</a></li>
+                <li><strong>Soul Design System:</strong> <a href="https://soul.emplifi.io/" target="_blank">soul.emplifi.io</a></li>
+            </ul>
+        </section>
+        
+        <section class="info-section" style="margin-top: var(--spacing-lg);">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li>✅ Vanilla JavaScript (Web Components API)</li>
+                <li>✅ Pure HTML/CSS</li>
+                <li>✅ Soul Design System (design tokens)</li>
+                <li>✅ No frameworks, no build step</li>
+                <li>✅ ES6 modules</li>
+                <li>✅ Atomic Design principles</li>
+            </ul>
+        </section>
     </div>
-    
-    <script src="script.js"></script>
 </body>
 </html>
+

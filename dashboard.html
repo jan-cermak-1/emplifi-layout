@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashuoard - Emplifi Layout</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://base.cdn.emplifi.io">
+    <link href="https://base.cdn.emplifi.io/suite/misc/fonts/Inter/inter.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout" data-name="emplifi-layout-atomic">
+        <main-navigation current-section="dashboard"></main-navigation>
+        <sub-navigation-container section-name="dashboard"></sub-navigation-container>
+        <header-container section-name="dashboard"></header-container>
+        <content-container section-name="dashboard"></content-container>
+    </div>
+    <script type="module" src="components/organisms/MainNavigation.js"></script>
+    <script type="module" src="components/organisms/SubNavigationContainer.js"></script>
+    <script type="module" src="components/organisms/HeaderContainer.js"></script>
+    <script type="module" src="components/organisms/ContentContainer.js"></script>
+</body>
+</html>

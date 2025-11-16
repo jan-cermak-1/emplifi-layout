@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Analytics - Emplifi Layout</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Inter Font - Self-hosted (matching production) -->
+    <link rel="preconnect" href="https://base.cdn.emplifi.io">
+    <link href="https://base.cdn.emplifi.io/suite/misc/fonts/Inter/inter.css" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout" data-name="emplifi-layout-atomic">
+        <!-- Main Navigation (Shared across all pages) -->
+        <main-navigation current-section="unified-analytics"></main-navigation>
+        
+        <!-- Sub-Navigation (Section-specific) -->
+        <sub-navigation-container section-name="unified-analytics"></sub-navigation-container>
+        
+        <!-- Header (Section-specific) -->
+        <header-container section-name="unified-analytics"></header-container>
+        
+        <!-- Content Area -->
+        <content-container section-name="unified-analytics">
+            <!-- Page content will be added here -->
+        </content-container>
+    </div>
+    
+    <!-- Load all components -->
+    <script type="module" src="components/organisms/MainNavigation.js"></script>
+    <script type="module" src="components/organisms/SubNavigationContainer.js"></script>
+    <script type="module" src="components/organisms/HeaderContainer.js"></script>
+    <script type="module" src="components/organisms/ContentContainer.js"></script>
+</body>
+</html>
+
