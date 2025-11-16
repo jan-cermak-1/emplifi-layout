@@ -621,7 +621,7 @@ body {
 }
 
 .subnav-item-expandable.chevron-hover::before {
-    background-color: #EDEDEE; /* Chevron area has its own hover color */
+    background-color: #0000000d; /* Chevron area has its own hover color */
 }
 
 .subnav-item-expandable.is-expanded .subnav-item-chevron {
