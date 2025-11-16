@@ -6,6 +6,21 @@ Funkční responzivní layout aplikace podle **Soul Design System** od Emplifi.
 
 Tento layout slouží jako výchozí bod pro product designery k vytváření konzistentních aplikačních rozhraní. Vše je implementováno 1:1 dle Figma designů s plně funkční interaktivitou.
 
+## 🧩 Architektura - Web Components
+
+Tento layout používá **vanilla JavaScript Web Components** pro znovupoužitelnost a modularitu. Všechny komponenty fungují bez Shadow DOM, což zajišťuje jednoduchost ladění CSS.
+
+### Komponenty
+
+- **`<main-navigation>`** - Hlavní navigace (sdílená pro všechny sekce)
+- **`<sub-navigation section="...">`** - Sub-navigace (specifická pro každou sekci)
+- **`<header-bar section="...">`** - Header (specifický pro každou sekci)
+- **`<content-area section="...">`** - Content area (specifická pro každou sekci)
+
+### Konfigurace
+
+Všechny sekce jsou definovány v `data/sections-config.js`. Pro přidání nové sekce stačí upravit tento soubor a vytvořit nový HTML soubor.
+
 ## 📐 Struktura Layoutu
 
 Layout se skládá ze 4 hlavních sekcí:
@@ -433,6 +448,75 @@ Pokud narazíš na problém s Figmou, řekni mi a poskytnu ti SVG ikony přímo.
 ```
 
 </details>
+
+---
+
+## 📝 Jak přidat novou sekci
+
+### 1. Aktualizuj konfiguraci
+
+Uprav soubor `data/sections-config.js` a přidej novou sekci:
+
+```javascript
+'new-section': {
+    id: 'new-section',
+    name: 'New Section',
+    url: 'new-section.html',
+    pageTitle: 'New Section - Emplifi',
+    status: 'placeholder', // nebo 'complete'
+    icons: {
+        normal: 'assets/main-navigation/icons/normal/NewSection.svg',
+        hover: 'assets/main-navigation/icons/hover/NewSection.svg',
+        selected: 'assets/main-navigation/icons/isSelected/NewSection.svg'
+    }
+}
+```
+
+### 2. Vytvoř HTML soubor
+
+Vytvoř nový soubor `new-section.html` s touto strukturou:
+
+```html
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>New Section - Emplifi</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://base.cdn.emplifi.io/suite/misc/fonts/Inter/inter.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <main-navigation class="main-navigation"></main-navigation>
+        <sub-navigation class="sub-navigation" section="new-section"></sub-navigation>
+        <header-bar class="header" section="new-section"></header-bar>
+        <content-area class="content" section="new-section"></content-area>
+    </div>
+    <script type="module" src="components/main-navigation.js"></script>
+    <script type="module" src="components/sub-navigation.js"></script>
+    <script type="module" src="components/header-bar.js"></script>
+    <script type="module" src="components/content-area.js"></script>
+</body>
+</html>
+```
+
+### 3. Přidej ikony
+
+Nahraj SVG ikony:
+- `assets/main-navigation/icons/normal/NewSection.svg`
+- `assets/main-navigation/icons/hover/NewSection.svg`
+- `assets/main-navigation/icons/isSelected/NewSection.svg`
+
+### 4. (Volitelné) Implementuj plnou sub-navigaci
+
+Pro plnou implementaci uprav `components/sub-navigation.js`:
+
+```javascript
+if (section.id === 'new-section') {
+    this.renderNewSection(section);
+}
+```
 
 ---
 

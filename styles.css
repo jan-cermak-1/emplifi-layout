@@ -396,6 +396,20 @@ body {
     min-height: 0; /* Important for flex children */
 }
 
+/* Placeholder content for sections without full implementation */
+.subnav-placeholder {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.subnav-placeholder p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-on-layer-tertiary);
+    line-height: 20px;
+}
+
 .subnav-title {
     font-family: 'Inter', sans-serif;
     font-size: 10px;
@@ -832,6 +846,41 @@ body:not(.subnav-closed) .header-divider {
     margin-left: var(--main-nav-width);
 }
 
+/* Content placeholder for sections without full implementation */
+.content-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.content-placeholder h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--color-on-layer-primary);
+    margin-bottom: 16px;
+}
+
+.content-placeholder p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-on-layer-tertiary);
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.content-placeholder .content-status {
+    font-size: 14px;
+    font-weight: 600;
+    color: #08739C;
+    margin-top: 20px;
+}
+
 /* ========================================
    Scrollbar Styling (Optional)
    ======================================== */
@@ -872,31 +921,42 @@ body:not(.subnav-closed) .header-divider {
    Fullscreen Mode - Hide Main Navigation
    ======================================== */
 
+/* Main navigation hidden state */
+.main-navigation.mainnav-hidden,
 body.mainnav-hidden .main-navigation {
     transform: translateX(-100%);
 }
 
+/* Sub-navigation adjusts when main nav is hidden */
+.sub-navigation.mainnav-hidden,
 body.mainnav-hidden .sub-navigation {
     left: 0;
 }
 
+/* Header adjusts when main nav is hidden */
+.header.mainnav-hidden,
 body.mainnav-hidden .header {
     left: var(--sub-nav-width);
 }
 
+/* Content adjusts when main nav is hidden */
+.content.mainnav-hidden,
 body.mainnav-hidden .content {
     margin-left: var(--sub-nav-width);
 }
 
 /* When both main nav is hidden AND sub nav is closed */
+.sub-navigation.mainnav-hidden.is-closed,
 body.mainnav-hidden.subnav-closed .sub-navigation {
     transform: translateX(calc(-100%));
 }
 
+.header.mainnav-hidden.subnav-closed,
 body.mainnav-hidden.subnav-closed .header {
     left: 0;
 }
 
+.content.mainnav-hidden.subnav-closed,
 body.mainnav-hidden.subnav-closed .content {
     margin-left: 0;
 }

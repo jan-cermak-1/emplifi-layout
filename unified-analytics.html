@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unified Analytics - Emplifi</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Inter Font - Self-hosted (matching production) -->
+    <link rel="preconnect" href="https://base.cdn.emplifi.io">
+    <link href="https://base.cdn.emplifi.io/suite/misc/fonts/Inter/inter.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Layout Container -->
+    <div class="layout" data-name="emplifi-layout-components">
+        
+        <!-- Main Navigation (Shared across all pages) -->
+        <main-navigation class="main-navigation" data-name="main-navigation"></main-navigation>
+        
+        <!-- Sub Navigation (Section-specific) -->
+        <sub-navigation class="sub-navigation" data-name="sub-navigation" section="unified-analytics"></sub-navigation>
+        
+        <!-- Header (Section-specific) -->
+        <header-bar class="header" data-name="header" section="unified-analytics"></header-bar>
+        
+        <!-- Content Area -->
+        <content-area class="content" data-name="content" section="unified-analytics">
+            <!-- Custom content can be added here if needed -->
+        </content-area>
+        
+    </div>
+    
+    <!-- Load Web Components -->
+    <script type="module" src="components/main-navigation.js"></script>
+    <script type="module" src="components/sub-navigation.js"></script>
+    <script type="module" src="components/header-bar.js"></script>
+    <script type="module" src="components/content-area.js"></script>
+</body>
+</html>
