@@ -135,12 +135,12 @@ class SubNavigation extends HTMLElement {
                             <img src="assets/una/sub-navigation/Chevron down.svg" alt="" class="subnav-item-chevron" />
                         </button>
                         <button class="subnav-item subnav-item-expandable" data-page="bot">
-                            <img src="assets/una/sub-navigation/Bot.svg" alt="Bot" class="subnav-item-icon" />
+                            <img src="assets/una/sub-navigation/bot.svg" alt="Bot" class="subnav-item-icon" />
                             <span class="subnav-item-label">Bot</span>
                             <img src="assets/una/sub-navigation/Chevron down.svg" alt="" class="subnav-item-chevron" />
                         </button>
                         <button class="subnav-item subnav-item-expandable" data-page="community">
-                            <img src="assets/una/sub-navigation/Community.svg" alt="Community" class="subnav-item-icon" />
+                            <img src="assets/una/sub-navigation/community.svg" alt="Community" class="subnav-item-icon" />
                             <span class="subnav-item-label">Community</span>
                             <img src="assets/una/sub-navigation/Chevron down.svg" alt="" class="subnav-item-chevron" />
                         </button>
