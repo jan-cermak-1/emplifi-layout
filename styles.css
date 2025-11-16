@@ -512,7 +512,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 0 6px;
+    padding: 0;
 }
 
 .subnav-item {
