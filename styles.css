@@ -519,9 +519,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 12px;
+    gap: 6px;
     height: 36px;
-    padding: 0 6px;
+    padding: 0 6px; /* Default padding for top-level items (Home, Objectives) */
     background: transparent;
     border: none;
     border-radius: 6px;
@@ -530,6 +530,16 @@ body {
     transition: background-color 0.2s ease;
     margin-bottom: 0;
     text-align: left;
+}
+
+/* Items inside sections - no padding (section already has 6px) */
+.subnav-section .subnav-item {
+    padding: 0;
+}
+
+/* Expandable items in sections need right padding for chevron */
+.subnav-section .subnav-item-expandable {
+    padding-right: 36px;
 }
 
 .subnav-item:hover {
@@ -562,7 +572,7 @@ body {
 .subnav-item-expandable {
     justify-content: flex-start;
     position: relative;
-    padding-right: 36px;
+    /* padding-right set by context - see .subnav-section .subnav-item-expandable */
 }
 
 /* Chevron wrapper - positioned absolutely to create centered hover area */
@@ -648,12 +658,12 @@ body {
     line-height: 12px;
     letter-spacing: 0.01px;
     text-transform: uppercase;
-    color: rgb(8, 115, 156);
+    color: rgb(80, 80, 87); /* Default gray for all sections */
 }
 
-/* Discover and other sections - gray */
-.subnav-section:not(:first-of-type) .subnav-section-title {
-    color: rgb(80, 80, 87);
+/* Early Access section only - blue */
+.subnav-section:first-of-type .subnav-section-title {
+    color: rgb(8, 115, 156);
 }
 
 /* ========================================
