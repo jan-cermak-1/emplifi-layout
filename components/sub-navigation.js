@@ -234,8 +234,10 @@ class SubNavigation extends HTMLElement {
         
         if (this.isClosed) {
             this.classList.add('is-closed');
+            document.body.classList.add('subnav-closed');
         } else {
             this.classList.remove('is-closed');
+            document.body.classList.remove('subnav-closed');
         }
 
         // Dispatch event for other components

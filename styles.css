@@ -112,6 +112,12 @@ main-navigation,
     transition: width 0.3s ease, transform 0.3s ease;
 }
 
+/* Main navigation open state on hover */
+main-navigation.is-open,
+.main-navigation.is-open {
+    width: 240px;
+}
+
 /* Navigation Logo */
 .nav-logo {
     width: 36px;
@@ -159,14 +165,17 @@ main-navigation,
 }
 
 /* When navigation is open */
+main-navigation.is-open .nav-logo,
 .main-navigation.is-open .nav-logo {
     width: 116px;
 }
 
+main-navigation.is-open .nav-logo-icon,
 .main-navigation.is-open .nav-logo-icon {
     display: none;
 }
 
+main-navigation.is-open .nav-logo-text,
 .main-navigation.is-open .nav-logo-text {
     display: block;
 }
@@ -243,6 +252,12 @@ main-navigation,
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+
+/* Show labels when navigation is open */
+main-navigation.is-open .nav-label,
+.main-navigation.is-open .nav-label {
+    opacity: 1;
 }
 
 /* Hover State */
@@ -716,6 +731,7 @@ header-bar,
 }
 
 /* When sub-navigation is closed, adjust header position */
+.subnav-closed header-bar,
 .subnav-closed .header {
     left: var(--main-nav-width);
 }

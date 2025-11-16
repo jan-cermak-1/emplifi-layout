@@ -139,6 +139,15 @@ class MainNavigation extends HTMLElement {
                 detail: { isHidden }
             }));
         });
+
+        // Hover to expand main navigation
+        this.addEventListener('mouseenter', () => {
+            this.classList.add('is-open');
+        });
+
+        this.addEventListener('mouseleave', () => {
+            this.classList.remove('is-open');
+        });
     }
 
     /**
