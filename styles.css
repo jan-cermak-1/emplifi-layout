@@ -576,6 +576,13 @@ sub-navigation.is-closed,
     flex-shrink: 0;
 }
 
+.subnav-item-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
 .subnav-item-label {
     font-family: var(--Font-family-Primary, Inter);
     font-size: var(--Font-size-Medium, 13px);
@@ -585,7 +592,6 @@ sub-navigation.is-closed,
     color: var(--color-on-layer-primary);
     font-variant-numeric: slashed-zero;
     font-feature-settings: 'ss04' on, 'cv05' on, 'cv08' on, 'liga' off, 'clig' off;
-    flex: 1;
     text-align: left;
 }
 
@@ -735,7 +741,7 @@ sub-navigation.is-closed,
     letter-spacing: 0.01px;
     text-transform: uppercase;
     color: #ffffff;
-    margin-left: 6px;
+    margin-left: 0;
 }
 
 /* Sub-items container (for nested items like Feeds) */

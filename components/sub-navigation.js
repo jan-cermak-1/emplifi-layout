@@ -211,8 +211,10 @@ class SubNavigation extends HTMLElement {
                         </button>
                         <button class="subnav-item ${pageState === 'campaigns' ? 'is-active' : ''}" data-page="campaigns">
                             <img src="assets/publisher/sub-navigation/Campaign.svg" alt="Campaigns" class="subnav-item-icon" />
-                            <span class="subnav-item-label">Campaigns</span>
-                            <span class="subnav-badge-new">NEW</span>
+                            <div class="subnav-item-content">
+                                <span class="subnav-item-label">Campaigns</span>
+                                <span class="subnav-badge-new">NEW</span>
+                            </div>
                         </button>
                         <button class="subnav-item" data-page="collections">
                             <img src="assets/publisher/sub-navigation/Collection.svg" alt="Collections" class="subnav-item-icon" />
