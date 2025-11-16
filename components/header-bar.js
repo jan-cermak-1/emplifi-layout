@@ -64,17 +64,20 @@ class HeaderBar extends HTMLElement {
      * Renders a placeholder header for sections without full implementation
      */
     renderPlaceholder(section) {
+        const menuIcon = section.assets?.header?.menuIcon || 'assets/main-navigation/logo/Emplifi - menu close.svg';
+        const fullscreenIcon = section.assets?.header?.fullscreenIcon || 'assets/main-navigation/logo/Emplifi - menu close.svg';
+        
         this.innerHTML = `
             <div class="header-left">
                 <button class="header-btn header-toggle-subnav" aria-label="Open sub-navigation">
-                    <img src="assets/main-navigation/logo/Emplifi - menu close.svg" alt="Menu" />
+                    <img src="${menuIcon}" alt="Menu" />
                 </button>
                 <div class="header-divider"></div>
                 <h1 class="header-title">${section.name}</h1>
             </div>
             <div class="header-right">
                 <button class="header-btn header-fullscreen-btn" aria-label="Fullscreen">
-                    <img src="assets/main-navigation/logo/Emplifi - menu close.svg" alt="Fullscreen" />
+                    <img src="${fullscreenIcon}" alt="Fullscreen" />
                 </button>
             </div>
         `;
@@ -127,23 +130,20 @@ class HeaderBar extends HTMLElement {
         
         const fullscreenBtn = this.querySelector('.header-fullscreen-btn');
         const img = fullscreenBtn?.querySelector('img');
+        const section = sectionsConfig[this.getAttribute('section')];
         
         if (this.isFullscreen) {
             // Switch to minimize icon
-            if (img) {
-                const section = sectionsConfig[this.getAttribute('section')];
-                if (section.id === 'unified-analytics') {
-                    img.src = 'assets/una/header/Minimize- fulsscreen.svg';
-                }
+            if (img && section) {
+                const minimizeIcon = section.assets?.header?.minimizeIcon || 'assets/main-navigation/logo/Emplifi - menu close.svg';
+                img.src = minimizeIcon;
             }
             fullscreenBtn?.setAttribute('aria-label', 'Exit fullscreen');
         } else {
             // Switch to maximize icon
-            if (img) {
-                const section = sectionsConfig[this.getAttribute('section')];
-                if (section.id === 'unified-analytics') {
-                    img.src = 'assets/una/header/Maximize, Fullscreen.svg';
-                }
+            if (img && section) {
+                const fullscreenIcon = section.assets?.header?.fullscreenIcon || 'assets/main-navigation/logo/Emplifi - menu close.svg';
+                img.src = fullscreenIcon;
             }
             fullscreenBtn?.setAttribute('aria-label', 'Fullscreen');
         }

@@ -179,12 +179,14 @@ class SubNavigation extends HTMLElement {
      * Renders a placeholder sub-navigation for sections without full implementation
      */
     renderPlaceholder(section) {
+        const closeIcon = section.assets?.subNavigation?.closeIcon || 'assets/main-navigation/logo/Emplifi - menu close.svg';
+        
         this.innerHTML = `
             <!-- Section Title -->
             <div class="subnav-header">
                 <h1 class="subnav-title">${section.name}</h1>
                 <button class="subnav-collapse-btn" aria-label="Close sub-navigation">
-                    <img src="assets/main-navigation/logo/Emplifi - menu close.svg" alt="" class="subnav-collapse-icon" />
+                    <img src="${closeIcon}" alt="" class="subnav-collapse-icon" />
                 </button>
             </div>
             

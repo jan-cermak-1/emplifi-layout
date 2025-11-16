@@ -8,6 +8,7 @@
  * - pageTitle: Browser page title
  * - status: 'complete' or 'placeholder'
  * - icons: Paths to normal, hover, and selected state icons
+ * - assets: Paths to section-specific assets (sub-navigation, header)
  */
 
 export const sectionsConfig = {
@@ -21,6 +22,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Home.svg',
             hover: 'assets/main-navigation/icons/hover/Home.svg',
             selected: 'assets/main-navigation/icons/isSelected/Home.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/command-center/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/command-center/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/command-center/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/command-center/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'dashboard': {
@@ -33,6 +44,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Dashboard.svg',
             hover: 'assets/main-navigation/icons/hover/Dashboard.svg',
             selected: 'assets/main-navigation/icons/isSelected/Dashboard.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/dashboard/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/dashboard/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/dashboard/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/dashboard/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'unified-analytics': {
@@ -45,6 +66,17 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Unified Analytics.svg',
             hover: 'assets/main-navigation/icons/hover/Unified Analytics.svg',
             selected: 'assets/main-navigation/icons/isSelected/Unified Analytics.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/una/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/una/header/Menu hamburger.svg',
+                searchIcon: 'assets/una/header/Search.svg',
+                fullscreenIcon: 'assets/una/header/Maximize, Fullscreen.svg',
+                minimizeIcon: 'assets/una/header/Minimize- fulsscreen.svg'
+            }
         }
     },
     'publisher': {
@@ -57,6 +89,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Publisher.svg',
             hover: 'assets/main-navigation/icons/hover/Publisher.svg',
             selected: 'assets/main-navigation/icons/isSelected/Publisher.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/publisher/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/publisher/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/publisher/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/publisher/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'community': {
@@ -69,6 +111,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Community.svg',
             hover: 'assets/main-navigation/icons/hover/Community.svg',
             selected: 'assets/main-navigation/icons/isSelected/Community.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/community/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/community/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/community/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/community/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'care': {
@@ -81,6 +133,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Care.svg',
             hover: 'assets/main-navigation/icons/hover/Care.svg',
             selected: 'assets/main-navigation/icons/isSelected/Care.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/care/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/care/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/care/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/care/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'content': {
@@ -93,6 +155,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Content.svg',
             hover: 'assets/main-navigation/icons/hover/Content.svg',
             selected: 'assets/main-navigation/icons/isSelected/Content.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/content/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/content/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/content/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/content/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'ugc': {
@@ -105,6 +177,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/User Generated Content.svg',
             hover: 'assets/main-navigation/icons/hover/User Generated Content.svg',
             selected: 'assets/main-navigation/icons/isSelected/User Generated Content.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/ugc/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/ugc/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/ugc/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/ugc/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'bot': {
@@ -117,6 +199,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Bot.svg',
             hover: 'assets/main-navigation/icons/hover/Bot.svg',
             selected: 'assets/main-navigation/icons/isSelected/Bot.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/bot/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/bot/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/bot/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/bot/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'ratings-reviews': {
@@ -129,6 +221,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Rating & Reviews.svg',
             hover: 'assets/main-navigation/icons/hover/Rating & Reviews.svg',
             selected: 'assets/main-navigation/icons/isSelected/Rating & Reviews.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/ratings-reviews/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/ratings-reviews/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/ratings-reviews/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/ratings-reviews/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'help-support': {
@@ -141,6 +243,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Help.svg',
             hover: 'assets/main-navigation/icons/hover/Help.svg',
             selected: 'assets/main-navigation/icons/isSelected/Help.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/help-support/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/help-support/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/help-support/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/help-support/header/Minimize Fullscreen.svg'
+            }
         }
     },
     'settings': {
@@ -153,6 +265,16 @@ export const sectionsConfig = {
             normal: 'assets/main-navigation/icons/normal/Settings.svg',
             hover: 'assets/main-navigation/icons/hover/Settings.svg',
             selected: 'assets/main-navigation/icons/isSelected/Settings.svg'
+        },
+        assets: {
+            subNavigation: {
+                closeIcon: 'assets/settings/sub-navigation/Menu close.svg'
+            },
+            header: {
+                menuIcon: 'assets/settings/header/Menu hamburger.svg',
+                fullscreenIcon: 'assets/settings/header/Maximize Fullscreen.svg',
+                minimizeIcon: 'assets/settings/header/Minimize Fullscreen.svg'
+            }
         }
     }
 };
