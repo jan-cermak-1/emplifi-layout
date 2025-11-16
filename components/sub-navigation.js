@@ -239,16 +239,12 @@ class SubNavigation extends HTMLElement {
     toggleClosed() {
         this.isClosed = !this.isClosed;
         
-        console.log('toggleClosed called, isClosed:', this.isClosed);
-        
         if (this.isClosed) {
             this.classList.add('is-closed');
             document.body.classList.add('subnav-closed');
-            console.log('Added subnav-closed to body, body classes:', document.body.className);
         } else {
             this.classList.remove('is-closed');
             document.body.classList.remove('subnav-closed');
-            console.log('Removed subnav-closed from body, body classes:', document.body.className);
         }
 
         // Dispatch event for other components
