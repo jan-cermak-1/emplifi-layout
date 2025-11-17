@@ -120,6 +120,11 @@
             color: #08739C;
         }
 
+        .section-badge.in-progress {
+            background: #FFF4E5;
+            color: #FF8C00;
+        }
+
         .section-badge.placeholder {
             background: #F3F3F5;
             color: #9D9DA0;
@@ -228,19 +233,28 @@
             card.href = section.url;
             card.className = 'section-card';
             
-            const badgeClass = section.status === 'complete' ? 'complete' : 'placeholder';
-            const badgeText = section.status === 'complete' ? 'Complete' : 'Coming Soon';
+            let badgeClass, badgeText, description;
+            
+            if (section.status === 'complete') {
+                badgeClass = 'complete';
+                badgeText = 'Complete';
+                description = 'Full implementation with navigation, header, and content areas.';
+            } else if (section.status === 'in-progress') {
+                badgeClass = 'in-progress';
+                badgeText = 'In Progress';
+                description = 'Implementation in progress with core functionality available.';
+            } else {
+                badgeClass = 'placeholder';
+                badgeText = 'Coming Soon';
+                description = 'Placeholder implementation with basic navigation structure.';
+            }
             
             card.innerHTML = `
                 <div class="section-header">
                     <h2 class="section-name">${section.name}</h2>
                     <span class="section-badge ${badgeClass}">${badgeText}</span>
                 </div>
-                <p class="section-description">
-                    ${section.status === 'complete' 
-                        ? 'Full implementation with navigation, header, and content areas.' 
-                        : 'Placeholder implementation with basic navigation structure.'}
-                </p>
+                <p class="section-description">${description}</p>
             `;
             
             container.appendChild(card);
